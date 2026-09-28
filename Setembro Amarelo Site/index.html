@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Antes de Desistir — Setembro Amarelo</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root{
+  --yellow:#ffd84d;
+  --yellow2:#fff3b0;
+  --gold:#e8ad22;
+  --cream:#fffdf5;
+  --ink:#3d392d;
+  --muted:#77715f;
+  --card:#ffffff;
+  --line:#f1e4ad;
+  --shadow:0 18px 45px rgba(106,88,20,.12);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--ink);
+
+  background:
+  radial-gradient(
+    circle at 10% 5%,
+    #fff1a7 0 8%,
+    transparent 28%
+  ),
+  radial-gradient(
+    circle at 90% 20%,
+    #fff7ce 0 7%,
+    transparent 25%
+  ),
+  var(--cream);
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  backdrop-filter:blur(12px);
+
+  background:rgba(255,253,245,.88);
+
+  border-bottom:1px solid var(--line);
+}
+
+.navin{
+  max-width:1120px;
+  margin:auto;
+  padding:14px 22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.logo span{
+  color:#d49b00;
+}
+
+.navlinks{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.navlinks .navlink{
+  border:0;
+  background:transparent;
+
+  padding:9px 12px;
+
+  border-radius:999px;
+
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.navlinks .navlink:hover{
+  background:var(--yellow2);
+  color:var(--ink);
+}
+
+
+/* IMAGEM DO BOTÃO "PRECISO DE AJUDA" */
+
+.navlinks .ajuda{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.navlinks .ajuda img{
+  width:20px;
+  height:20px;
+  max-width:20px;
+  max-height:20px;
+  object-fit:contain;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main{
+  max-width:1120px;
+  margin:auto;
+  padding:0 22px;
+}
+
+
+/* =========================
+   INÍCIO
+========================= */
+
+.hero{
+  min-height:650px;
+
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+
+  gap:45px;
+
+  align-items:center;
+
+  padding:65px 0 55px;
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:#fff5bf;
+  border:1px solid #f4dc73;
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  font-size:.86rem;
+  font-weight:800;
+
+  color:#806100;
+}
+
+h1{
+  font-size:clamp(4rem,9vw,7.7rem);
+  line-height:.83;
+  letter-spacing:-.075em;
+
+  margin:20px 0;
+
+  color:#e6ad1c;
+}
+
+.hero h2{
+  font-size:clamp(1.25rem,2vw,1.7rem);
+  font-weight:500;
+  line-height:1.45;
+
+  max-width:650px;
+}
+
+.hero p{
+  font-size:1.08rem;
+  line-height:1.75;
+
+  color:var(--muted);
+
+  max-width:650px;
+}
+
+.cta{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+
+  margin-top:26px;
+}
+
+.btn{
+  display:inline-block;
+
+  border:0;
+  border-radius:16px;
+
+  padding:14px 19px;
+
+  font-weight:800;
+  text-decoration:none;
+
+  transition:.2s;
+
+  box-shadow:0 8px 20px rgba(130,100,0,.1);
+}
+
+.btn.primary{
+  background:var(--yellow);
+  color:#4b3b00;
+}
+
+.btn.secondary{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  color:var(--ink);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* IMAGEM BORBO SOL */
+
+.hero-art{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:410px;
+}
+
+.hero-art .flower{
+  display:block;
+
+  width:min(100%,480px);
+  height:auto;
+
+  object-fit:contain;
+
+  filter:drop-shadow(
+    0 12px 8px rgba(95,72,0,.12)
+  );
+}
+
+
+/* CARTÃO DO INÍCIO */
+
+.note{
+  position:absolute;
+
+  right:0;
+  bottom:35px;
+
+  background:#fff;
+
+  padding:20px;
+
+  border-radius:22px;
+
+  box-shadow:var(--shadow);
+
+  width:190px;
+
+  transform:rotate(4deg);
+
+  z-index:2;
+}
+
+.note b{
+  display:block;
+
+  font-size:1.05rem;
+
+  margin-bottom:7px;
+}
+
+.note small{
+  color:var(--muted);
+
+  line-height:1.4;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section{
+  padding:75px 0;
+}
+
+.section-head{
+  margin-bottom:30px;
+}
+
+.eyebrow{
+  color:#b38300;
+
+  text-transform:uppercase;
+
+  letter-spacing:.14em;
+
+  font-size:.75rem;
+
+  font-weight:900;
+}
+
+h3{
+  font-size:clamp(2rem,4vw,3rem);
+
+  margin:8px 0;
+
+  letter-spacing:-.04em;
+}
+
+.section-head p{
+  color:var(--muted);
+
+  max-width:680px;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.quote{
+  font-size:clamp(1.35rem,2.7vw,2rem);
+
+  line-height:1.4;
+
+  font-weight:700;
+
+  padding:35px;
+
+  border-left:6px solid var(--yellow);
+
+  background:#fff;
+
+  border-radius:0 24px 24px 0;
+
+  box-shadow:var(--shadow);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+}
+
+.card{
+  background:rgba(255,255,255,.92);
+
+  border:1px solid var(--line);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  box-shadow:var(--shadow);
+
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.icon{
+  margin-bottom:12px;
+}
+
+.icon img{
+  width:35px;
+  height:35px;
+  object-fit:contain;
+}
+
+.card h4{
+  margin:0 0 8px;
+
+  font-size:1.2rem;
+}
+
+.card p{
+  color:var(--muted);
+
+  line-height:1.6;
+
+  margin:0 0 18px;
+}
+
+.card-link{
+  display:block;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  width:100%;
+
+  border:1px solid var(--line);
+
+  background:#fff9da;
+
+  border-radius:13px;
+
+  padding:11px;
+
+  font-weight:800;
+
+  color:#705500;
+}
+
+
+/* =========================
+   MODAIS
+========================= */
+
+.modal{
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(48,42,20,.55);
+
+  display:none;
+
+  place-items:center;
+
+  z-index:50;
+
+  padding:20px;
+}
+
+.modal:target{
+  display:grid;
+}
+
+.panel{
+  width:min(720px,100%);
+
+  max-height:90vh;
+
+  overflow:auto;
+
+  background:#fffdf7;
+
+  border-radius:28px;
+
+  padding:28px;
+
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+
+  position:relative;
+}
+
+.close{
+  position:absolute;
+
+  right:18px;
+  top:15px;
+
+  border:0;
+
+  background:#fff1a9;
+
+  border-radius:50%;
+
+  width:38px;
+  height:38px;
+
+  font-weight:900;
+
+  text-decoration:none;
+
+  color:var(--ink);
+
+  display:grid;
+  place-items:center;
+}
+
+.panel h3{
+  padding-right:45px;
+}
+
+.panel p{
+  color:var(--muted);
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   ACALMAR
+========================= */
+
+.acalmar-intro{
+  text-align:center;
+
+  padding:15px 10px 25px;
+}
+
+.acalmar-intro h3{
+  margin-bottom:15px;
+}
+
+.acalmar-intro p{
+  max-width:570px;
+
+  margin:0 auto 20px;
+}
+
+.botao-iniciar{
+  border:0;
+
+  background:var(--yellow);
+
+  color:#4b3b00;
+
+  padding:14px 25px;
+
+  border-radius:14px;
+
+  font-weight:800;
+
+  font-size:1rem;
+
+  box-shadow:0 8px 20px rgba(130,100,0,.1);
+}
+
+.botao-iniciar:hover{
+  transform:translateY(-2px);
+}
+
+#relaxamento{
+  display:none;
+}
+
+.breathe{
+  text-align:center;
+
+  padding:20px 5px;
+}
+
+.circle{
+  width:170px;
+  height:170px;
+
+  margin:25px auto;
+
+  border-radius:50%;
+
+  background:#ffe17a;
+
+  display:grid;
+  place-items:center;
+
+  font-weight:900;
+
+  font-size:1.2rem;
+}
+
+.breath-css{
+  animation:respirar 8s ease-in-out infinite;
+}
+
+@keyframes respirar{
+
+  0%{
+    transform:scale(.85);
+  }
+
+  50%{
+    transform:scale(1.2);
+  }
+
+  100%{
+    transform:scale(.85);
+  }
+
+}
+
+.legenda{
+  min-height:190px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:25px;
+
+  background:#fff9da;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  margin-top:20px;
+}
+
+#frase{
+  font-size:1.25rem;
+
+  line-height:1.7;
+
+  color:var(--ink);
+
+  max-width:600px;
+
+  margin:0;
+
+  animation:aparecer .8s ease;
+}
+
+@keyframes aparecer{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.progresso{
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:.85rem;
+
+  margin-top:12px;
+}
+
+
+/* =========================
+   PUBLICAÇÕES
+========================= */
+
+.blog{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  padding:25px;
+
+  box-shadow:var(--shadow);
+}
+
+.blog h4{
+  margin-top:0;
+
+  color:#806100;
+
+  font-size:1.2rem;
+}
+
+#texto-publicacao{
+  width:100%;
+
+  min-height:180px;
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:15px;
+
+  resize:vertical;
+
+  outline:none;
+
+  background:#fff;
+}
+
+#texto-publicacao:focus{
+  border-color:#e9bb2e;
+
+  box-shadow:0 0 0 4px #fff3b0;
+}
+
+.botao-publicar{
+  margin-top:12px;
+
+  border:0;
+
+  background:var(--yellow);
+
+  color:#4b3b00;
+
+  padding:13px 20px;
+
+  border-radius:13px;
+
+  font-weight:800;
+}
+
+.publicacoes{
+  margin-top:35px;
+}
+
+.publicacao{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  padding:20px;
+
+  margin-top:20px;
+
+  box-shadow:var(--shadow);
+}
+
+.publicacao h4{
+  margin:0 0 10px;
+
+  color:#9a7100;
+}
+
+.publicacao p{
+  color:var(--ink);
+
+  white-space:pre-wrap;
+
+  line-height:1.6;
+
+  margin:0 0 15px;
+}
+
+.data{
+  color:#999;
+
+  font-size:.8rem;
+}
+
+.botao-excluir{
+  margin-top:12px;
+
+  border:0;
+
+  background:#fff0c0;
+
+  color:#795b00;
+
+  padding:8px 12px;
+
+  border-radius:10px;
+}
+
+#lista-publicacoes{
+  margin-top:25px;
+}
+
+.sem-publicacoes{
+  background:#fff9da;
+
+  border:1px dashed #e6c95b;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  color:var(--muted);
+
+  text-align:center;
+}
+
+
+/* =========================
+   AJUDA
+========================= */
+
+.help{
+  background:#fff8d6;
+
+  border:1px solid #eed37b;
+
+  border-radius:25px;
+
+  padding:28px;
+}
+
+.help strong{
+  color:#8a6500;
+}
+
+.help p{
+  color:#5f5949;
+
+  line-height:1.65;
+}
+
+.contatos{
+  margin-top:25px;
+}
+
+.contatos h4{
+  font-size:1.2rem;
+
+  margin-bottom:15px;
+}
+
+.contato{
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:18px;
+
+  margin-top:12px;
+}
+
+.contato strong{
+  display:block;
+
+  color:#806100;
+
+  font-size:1.05rem;
+
+  margin-bottom:7px;
+}
+
+.contato p{
+  margin:5px 0 12px;
+}
+
+.contato small{
+  display:block;
+
+  margin-top:8px;
+
+  color:var(--muted);
+}
+
+.telefone{
+  display:inline-block;
+
+  text-decoration:none;
+
+  background:var(--yellow);
+
+  color:#4b3b00;
+
+  padding:10px 15px;
+
+  border-radius:12px;
+
+  font-weight:800;
+}
+
+.telefone:hover{
+  transform:translateY(-2px);
+}
+
+.mensagem-ajuda{
+  margin-top:25px;
+
+  padding:22px;
+
+  background:#fff9da;
+
+  border:1px solid #eed37b;
+
+  border-radius:20px;
+}
+
+.mensagem-ajuda h4{
+  margin-top:0;
+
+  color:#806100;
+}
+
+.mensagem-ajuda p{
+  line-height:1.7;
+}
+
+
+/* =========================
+   PEQUENAS OPÇÕES
+========================= */
+
+.options{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:20px;
+}
+
+.option-button{
+  display:block;
+
+  padding:11px 15px;
+
+  border-radius:13px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  color:#705500;
+
+  text-decoration:none;
+
+  font-weight:700;
+}
+
+.option-button:hover{
+  background:var(--yellow2);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+  padding:55px 22px;
+
+  background:#3e3829;
+
+  color:#fff9d9;
+
+  margin-top:35px;
+}
+
+.footin{
+  max-width:1120px;
+
+  margin:auto;
+}
+
+.footin p{
+  color:#ded6b5;
+
+  line-height:1.7;
+
+  max-width:750px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:800px){
+
+ 
+.note b{
+  display:block;
+
+  font-size:1.05rem;
+
+  margin-bottom:7px;
+}
+
+.note small{
+  color:var(--muted);
+
+  line-height:1.4;
+}
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .navin{
+    flex-direction:column;
+
+    gap:12px;
+  }
+
+  .navlinks{
+    justify-content:center;
+  }
+
+  h1{
+    font-size:4.5rem;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<nav>
+
+<div class="navin">
+
+<div class="logo">
+Antes de <span>Desistir</span>
+</div>
+
+<div class="navlinks">
+
+<a href="#inicio" class="navlink">
+Início
+</a>
+
+<a href="#interacoes" class="navlink">
+Explorar
+</a>
+
+<a href="fale-conosco.html" class="navlink">
+Fale Conosco
+</a>
+
+<a href="#ajuda" class="navlink">
+Ajuda
+</a>
+
+<a
+href="https://cvv.org.br/"
+target="_blank"
+class="navlink ajuda"
+>
+
+<img
+src="img/ajuda!.png"
+alt="Preciso de ajuda"
+>
+
+Preciso de ajuda
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section class="hero" id="inicio">
+
+<div>
+
+<div class="kicker">
+🌼 Setembro Amarelo · um espaço para ficar
+</div>
+
+<h1>
+Está<br>difícil?
+</h1>
+
+<h2>
+Não precisa resolver tudo agora. Só fique aqui por alguns minutos.
+</h2>
+
+<p>
+Eu não vou fingir que sei exatamente o que você está sentindo.
+Mas posso ficar aqui com você enquanto você decide qual é o próximo passo.
+</p>
+
+<div class="cta">
+
+<a
+class="btn primary"
+href="#interacoes"
+>
+O que eu preciso agora? ↓
+</a>
+
+<a
+class="btn secondary"
+href="#calma"
+>
+Respirar comigo
+</a>
+
+</div>
+
+</div>
+
+
+<!-- IMAGEM PRINCIPAL -->
+
+<div class="hero-art">
+
+<img
+src="img/borbossol.png"
+alt="Ilustração decorativa"
+class="flower"
+>
+
+<div class="note">
+
+<b>
+Você chegou até aqui.
+</b>
+
+<small>
+Por enquanto, isso já pode ser o próximo pequeno passo.
+</small>
+
+</div>
+
+</div>
+
+
+
+
+</section>
+
+
+<!-- =========================
+     INTERAÇÕES
+========================= -->
+
+<section
+class="section"
+id="interacoes"
+>
+
+<div class="section-head">
+
+<div class="eyebrow">
+Sem pressa
+</div>
+
+<h3>
+Só fique aqui por alguns minutos.<br>
+O que precisa agora?
+</h3>
+
+<p>
+Escolha o que combina com este momento.
+Você pode mudar de ideia quando quiser.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<article class="card">
+
+<div class="icon">
+
+<img
+src="img/paleta.png"
+alt="Ícone de expressar"
+>
+
+</div>
+
+<h4>
+Expressar
+</h4>
+
+<p>
+Rabisque, pinte ou transforme pensamentos em alguma coisa.
+</p>
+
+<a
+class="card-link"
+href="expressar.html"
+>
+Entrar
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="icon">
+
+<img
+src="img/meditar.png"
+alt="Ícone de acalmar"
+>
+
+</div>
+
+<h4>
+Acalmar
+</h4>
+
+<p>
+Respiração, sons ambientes e pequenas pausas para voltar ao agora.
+</p>
+
+<a
+class="card-link"
+href="#calma"
+>
+Entrar
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="icon">
+
+<img
+src="img/livro.png"
+alt="Ícone de leitura"
+>
+
+</div>
+
+<h4>
+Mergulhar no diverso
+</h4>
+
+<p>
+Leia alguma coisa por alguns minutos.
+Talvez encontre uma ideia interessante.
+</p>
+
+<a
+class="card-link"
+href="mergulhar.html"
+>
+Entrar
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="icon">
+
+<img
+src="img/ajuda.png"
+alt="Ícone de ajuda"
+>
+
+</div>
+
+<h4>
+Ajuda imediata
+</h4>
+
+<p>
+Converse, procure companhia e encontre caminhos para pedir ajuda.
+</p>
+
+<a
+class="card-link"
+href="#ajuda-modal"
+>
+Entrar
+</a>
+
+
+
+</article>
+<article class="card">
+
+<div class="icon">
+
+<img
+src="img/escrever.png"
+alt="Ícone de ser ouvido"
+>
+
+</div>
+
+<h4>
+Ser ouvido
+</h4>
+
+<p>
+Escreva o que você está sentindo ou pensando. Este espaço é seu.
+</p>
+
+<a
+class="card-link"
+href="#escrever"
+>
+Entrar
+</a>
+</article>
+</div>
+
+</section>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<section class="section">
+
+<div class="quote">
+
+“Eu não vou fingir que sei exatamente o que você está sentindo.
+Mas posso ficar aqui com você enquanto você decide qual é o próximo passo.”
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AJUDA
+========================= -->
+
+<section
+class="section"
+id="ajuda"
+>
+
+<div class="help">
+
+<div class="eyebrow">
+Importante
+</div>
+
+<h3>
+Ajuda imediata
+</h3>
+
+<p>
+Este é um espaço de companhia, não um serviço de emergência.
+Se você estiver em perigo imediato ou achar que pode se machucar,
+procure ajuda presencial ou um serviço de emergência.
+</p>
+
+<p>
+<strong>Você não precisa explicar tudo.</strong>
+Pode dizer oi, contar como está seu dia ou simplesmente conversar sobre qualquer coisa.
+</p>
+
+
+<div class="options">
+
+<a
+href="#pergunta"
+class="option-button"
+>
+Como você está se sentindo hoje?
+</a>
+
+<a
+href="#aleatorio"
+class="option-button"
+>
+Algo aleatório
+</a>
+
+<a
+href="#musica"
+class="option-button"
+>
+Música
+</a>
+
+<a
+href="#jogar"
+class="option-button"
+>
+Jogar
+</a>
+
+<a
+href="#boa"
+class="option-button"
+>
+Uma coisa boa
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SER OUVIDO
+========================= -->
+
+<section
+class="section"
+id="escrever"
+>
+
+<div class="section-head">
+
+<div class="eyebrow">
+Seu espaço
+</div>
+
+<h3>
+
+<img
+src="img/escrever.png"
+alt="Ícone"
+style="width:35px;height:35px;object-fit:contain;"
+>
+
+Ser ouvido
+
+</h3>
+
+<p>
+Aqui você pode escrever livremente.
+Não precisa escrever bonito, organizar seus pensamentos
+ou explicar tudo. Este espaço é seu.
+</p>
+
+</div>
+
+
+<div class="blog">
+
+<h4>
+O que você quer dizer?
+</h4>
+
+<textarea
+id="texto-publicacao"
+placeholder="Escreva aqui o que estiver passando pela sua cabeça...
+
+Pode ser um desabafo,
+uma história,
+uma coisa que aconteceu hoje,
+uma ideia,
+um pensamento,
+ou simplesmente qualquer coisa."
+></textarea>
+
+<button
+class="botao-publicar"
+onclick="publicar()"
+>
+Publicar
+</button>
+
+</div>
+
+
+<div class="publicacoes">
+
+<h3>
+Publicações
+</h3>
+
+<p>
+Um espaço para deixar pensamentos, histórias e palavras.
+</p>
+
+<div id="lista-publicacoes">
+
+<div class="sem-publicacoes">
+Ainda não há publicações.
+Se quiser, seja a primeira pessoa a escrever.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+<div class="footin">
+
+<h3>
+Antes de Desistir 🌻
+</h3>
+
+<p>
+Um projeto do Setembro Amarelo pensado para acolher,
+distrair e oferecer pequenos caminhos de pausa.
+Você não precisa resolver tudo agora.
+</p>
+
+<small>
+Conteúdo de acolhimento e informação.
+Não substitui atendimento profissional ou serviços de emergência.
+</small>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     MODAL ACALMAR
+========================= -->
+
+<div
+class="modal"
+id="calma"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#interacoes"
+onclick="pararRelaxamento()"
+>
+×
+</a>
+
+
+<div
+id="inicio-relaxamento"
+class="acalmar-intro"
+>
+
+<h3 class="icon">
+<img src="img/meditar.png" alt="Ícone de meditação"> Vamos desacelerar um pouco?
+</h3>
+
+<p>
+Esta é uma pequena pausa guiada.
+As instruções aparecerão uma por uma, como legendas.
+Leia no seu próprio ritmo, respire com calma e preste atenção aos sons,
+sensações e coisas ao seu redor.
+</p>
+
+<p>
+Você não precisa fazer tudo perfeitamente.
+Apenas acompanhe quando se sentir confortável.
+</p>
+
+<button
+class="botao-iniciar"
+onclick="iniciarRelaxamento()"
+>
+Começar
+</button>
+
+</div>
+
+
+<div id="relaxamento">
+
+<div class="breathe">
+
+<div class="circle breath-css">
+Respire
+</div>
+
+<p>
+<b>
+Acompanhe sua respiração.
+</b>
+</p>
+
+</div>
+
+<div class="legenda">
+
+<p id="frase"></p>
+
+</div>
+
+<div
+class="progresso"
+id="progresso"
+>
+1 de 15
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     MODAL AJUDA
+========================= -->
+
+<div
+class="modal"
+id="ajuda-modal"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#interacoes"
+>
+×
+</a>
+
+<h3 class="icon">
+<img src="img/ajuda.png" alt="Ícone de ajuda"> Ajuda imediata
+</h3>
+
+<p>
+Se você sente que precisa de ajuda agora, não precisa passar por isso sozinho.
+Conversar com alguém pode ser um primeiro passo.
+</p>
+
+
+<div class="help">
+
+<strong>
+Você pode pedir ajuda.
+</strong>
+
+<p>
+Se estiver difícil falar sobre o que está acontecendo, você não precisa explicar tudo de uma vez.
+Pode simplesmente dizer:
+<b>"Eu não estou bem e preciso que você fique comigo."</b>
+</p>
+
+<p>
+Se preferir, ligue para alguém em quem confia:
+um familiar, amigo, professor, responsável ou qualquer pessoa
+que faça você se sentir mais seguro.
+</p>
+
+</div>
+
+
+<div class="contatos">
+
+<h4>
+Onde procurar ajuda agora
+</h4>
+
+
+<div class="contato">
+
+<strong>
+CVV — Centro de Valorização da Vida
+</strong>
+
+<p>
+Para conversar com alguém de forma gratuita e sigilosa.
+</p>
+
+<a
+href="tel:188"
+class="telefone"
+>
+Ligar para 188
+</a>
+
+<small>
+Atendimento 24 horas.
+</small>
+
+</div>
+
+
+<div class="contato">
+
+<strong>
+SAMU — Serviço de Atendimento Móvel de Urgência
+</strong>
+
+<p>
+Para situações de urgência ou emergência médica.
+</p>
+
+<a
+href="tel:192"
+class="telefone"
+>
+Ligar para 192
+</a>
+
+<small>
+Atendimento 24 horas e gratuito.
+</small>
+
+</div>
+
+
+<div class="contato">
+
+<strong>
+Polícia Militar
+</strong>
+
+<p>
+Se houver perigo imediato ou uma situação que coloque você ou outra pessoa em risco.
+</p>
+
+<a
+href="tel:190"
+class="telefone"
+>
+Ligar para 190
+</a>
+
+</div>
+
+
+<div class="contato">
+
+<strong>
+Corpo de Bombeiros
+</strong>
+
+<p>
+Para incêndios, acidentes, resgates e outras situações de emergência.
+</p>
+
+<a
+href="tel:193"
+class="telefone"
+>
+Ligar para 193
+</a>
+
+</div>
+
+
+<div class="contato">
+
+<strong>
+CAPS, UBS e serviços de saúde
+</strong>
+
+<p>
+Você também pode procurar um CAPS, uma Unidade Básica de Saúde,
+uma UPA, pronto-socorro ou hospital.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mensagem-ajuda">
+
+<h4>
+🌼 Se ligar parece difícil...
+</h4>
+
+<p>
+Você pode começar mandando uma mensagem para alguém de confiança.
+Não precisa encontrar as palavras certas.
+</p>
+
+<p>
+<b>
+"Você pode ficar comigo um pouco? Eu não estou me sentindo bem."
+</b>
+</p>
+
+<p>
+Pedir ajuda não é incomodar.
+É permitir que alguém esteja ao seu lado enquanto você passa por um momento difícil.
+</p>
+
+</div>
+
+
+<div class="help">
+
+<strong>
+Importante
+</strong>
+
+<p>
+Se você estiver em perigo imediato ou acreditar que pode se machucar,
+procure ajuda presencial agora e acione um serviço de emergência.
+Se puder, não fique sozinho enquanto busca ajuda.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     PEQUENAS MENSAGENS
+========================= -->
+
+<div
+class="modal"
+id="pergunta"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#ajuda"
+>
+×
+</a>
+
+<h3>
+Como você está se sentindo hoje?
+</h3>
+
+<p>
+Você não precisa encontrar a palavra perfeita.
+Pode começar dizendo apenas uma coisa que está passando pela sua cabeça.
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="modal"
+id="aleatorio"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#ajuda"
+>
+×
+</a>
+
+<h3>
+Algo aleatório
+</h3>
+
+<p>
+Vamos conversar sobre qualquer coisa.
+Qual foi a última coisa curiosa que você viu hoje?
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="modal"
+id="musica"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#ajuda"
+>
+×
+</a>
+
+<h3>
+🎵 Música
+</h3>
+
+<p>
+Qual música você está ouvindo agora?
+Você também pode escolher uma música calma para acompanhar este momento.
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="modal"
+id="jogar"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#ajuda"
+>
+×
+</a>
+
+<h3>
+Jogar
+</h3>
+
+<p>
+Você pode abrir a área de jogos do site
+ou escolher uma atividade simples para ocupar as mãos.
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="modal"
+id="boa"
+>
+
+<div class="panel">
+
+<a
+class="close"
+href="#ajuda"
+>
+×
+</a>
+
+<h3>
+🌼 Uma coisa boa
+</h3>
+
+<p>
+Conte uma coisa boa — mesmo que pequena — que aconteceu hoje.
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   DINÂMICA ACALMAR
+========================= */
+
+var frases = [
+
+"Inspire devagar pelo nariz… segure por um instante… e solte o ar lentamente pela boca. Não precisa ter pressa.",
+
+"Respire mais uma vez, bem devagar. Enquanto o ar entra e sai, lembre-se: você só precisa cuidar deste momento agora.",
+
+"Feche os olhos, se isso for confortável, e perceba os sons mais distantes ao seu redor. Talvez o som da rua, de pessoas, de carros ou do vento.",
+
+"Agora, leve sua atenção para os sons mais próximos. Perceba sua própria respiração, o som da sua roupa ou algum pequeno barulho perto de você.",
+
+"Respire fundo novamente. Perceba a temperatura do ar entrando pelo nariz e saindo pela boca.",
+
+"Agora, observe o que está ao seu redor. Encontre uma coisa que você consegue ver e repare em seus detalhes: a cor, o formato, a textura.",
+
+"Procure outra coisa. Talvez uma planta, uma janela, uma parede, uma árvore ou o céu. Apenas observe, sem precisar pensar em nada além disso.",
+
+"Perceba o que você consegue sentir pelo toque. O apoio da cadeira, o chão sob seus pés, o tecido da sua roupa ou o vento tocando sua pele.",
+
+"Se houver natureza por perto, escute-a por alguns segundos. O vento nas folhas, o canto de um pássaro, a chuva ou qualquer pequeno som que esteja acontecendo agora.",
+
+"Inspire novamente… e, ao soltar o ar, relaxe um pouco os ombros. Você não precisa resolver tudo neste instante.",
+
+"Perceba algum cheiro ao seu redor. Pode ser o cheiro do ambiente, de uma planta, da chuva, de uma bebida ou simplesmente do ar.",
+
+"Agora volte para a sua respiração. Inspire lentamente… e solte o ar ainda mais devagar.",
+
+"Lembre-se de que você está aqui, neste momento. Não precisa correr para chegar a lugar nenhum.",
+
+"Continue respirando no seu próprio ritmo. Aos poucos, deixe sua atenção voltar para aquilo que está acontecendo ao seu redor.",
+
+"Você não precisa enfrentar tudo de uma vez. Por enquanto, fique aqui. Respire. Sinta. Escute. Um momento de cada vez."
+
+];
+
+
+var numeroFrase = 0;
+var tempoFrase;
+
+
+/* INICIAR */
+
+function iniciarRelaxamento(){
+
+  document.getElementById("inicio-relaxamento").style.display = "none";
+
+  document.getElementById("relaxamento").style.display = "block";
+
+  numeroFrase = 0;
+
+  mostrarFrase();
+
+}
+
+
+/* MOSTRAR FRASE */
+
+function mostrarFrase(){
+
+  var frase = document.getElementById("frase");
+
+  var progresso = document.getElementById("progresso");
+
+  frase.style.animation = "none";
+
+  frase.offsetHeight;
+
+  frase.style.animation = "aparecer .8s ease";
+
+  frase.textContent = frases[numeroFrase];
+
+  progresso.textContent =
+    (numeroFrase + 1) + " de " + frases.length;
+
+
+  var tempo = frases[numeroFrase].length * 65;
+
+  if(tempo < 7000){
+    tempo = 7000;
+  }
+
+  if(tempo > 13000){
+    tempo = 13000;
+  }
+
+
+  tempoFrase = setTimeout(function(){
+
+    if(numeroFrase < frases.length - 1){
+
+      numeroFrase++;
+
+      mostrarFrase();
+
+    }else{
+
+      finalizarRelaxamento();
+
+    }
+
+  },tempo);
+
+}
+
+
+/* FINALIZAR */
+
+function finalizarRelaxamento(){
+
+  clearTimeout(tempoFrase);
+
+  document.getElementById("frase").textContent =
+    "A dinâmica terminou. Continue respirando no seu próprio ritmo. Você pode ficar aqui por mais alguns instantes.";
+
+  document.getElementById("progresso").textContent =
+    "Pausa concluída";
+
+}
+
+
+/* FECHAR ACALMAR */
+
+function pararRelaxamento(){
+
+  clearTimeout(tempoFrase);
+
+  document.getElementById("relaxamento").style.display = "none";
+
+  document.getElementById("inicio-relaxamento").style.display = "block";
+
+}
+
+
+/* =========================
+   PUBLICAÇÕES
+========================= */
+
+function mostrarPublicacoes(){
+
+  var lista =
+    document.getElementById("lista-publicacoes");
+
+  var publicacoes =
+    JSON.parse(localStorage.getItem("publicacoes")) || [];
+
+  lista.innerHTML = "";
+
+
+  if(publicacoes.length == 0){
+
+    lista.innerHTML =
+      '<div class="sem-publicacoes">' +
+      'Ainda não há publicações. Se quiser, seja a primeira pessoa a escrever.' +
+      '</div>';
+
+    return;
+  }
+
+
+  for(
+    var i = publicacoes.length - 1;
+    i >= 0;
+    i--
+  ){
+
+    var div =
+      document.createElement("div");
+
+    div.className =
+      "publicacao";
+
+    div.innerHTML =
+      "<h4>🌼 Uma publicação</h4>" +
+      "<p>" +
+      escapar(publicacoes[i].texto) +
+      "</p>" +
+      "<div class='data'>" +
+      publicacoes[i].data +
+      "</div>" +
+      "<button class='botao-excluir' onclick='excluir(" +
+      i +
+      ")'>Excluir</button>";
+
+    lista.appendChild(div);
+
+  }
+
+}
+
+
+/* PUBLICAR */
+
+function publicar(){
+
+  var texto =
+    document.getElementById("texto-publicacao").value;
+
+
+  if(texto.trim() == ""){
+
+    alert(
+      "Escreva alguma coisa antes de publicar."
+    );
+
+    return;
+  }
+
+
+  var publicacoes =
+    JSON.parse(
+      localStorage.getItem("publicacoes")
+    ) || [];
+
+
+  publicacoes.push({
+
+    texto:texto,
+
+    data:new Date().toLocaleString("pt-BR")
+
+  });
+
+
+  localStorage.setItem(
+    "publicacoes",
+    JSON.stringify(publicacoes)
+  );
+
+
+  document.getElementById(
+    "texto-publicacao"
+  ).value = "";
+
+
+  mostrarPublicacoes();
+
+}
+
+
+/* EXCLUIR */
+
+function excluir(numero){
+
+  var publicacoes =
+    JSON.parse(
+      localStorage.getItem("publicacoes")
+    ) || [];
+
+
+  publicacoes.splice(numero,1);
+
+
+  localStorage.setItem(
+    "publicacoes",
+    JSON.stringify(publicacoes)
+  );
+
+
+  mostrarPublicacoes();
+
+}
+
+
+/* PROTEGER TEXTO */
+
+function escapar(texto){
+
+  return texto
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* CARREGAR PUBLICAÇÕES */
+
+mostrarPublicacoes();
+
+</script>
+
+</body>
+
+</html>

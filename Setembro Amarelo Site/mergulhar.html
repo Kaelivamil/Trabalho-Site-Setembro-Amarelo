@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Mergulhar no Diverso — uma seleção de textos reais sobre saúde mental, acolhimento, reflexão, cotidiano, arte e cultura.">
+
+<title>Mergulhar no Diverso | Antes de Desistir</title>
+
+<style>
+ 
+
+img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+:root {
+  --yellow: #f6c945;
+  --yellow-soft: #fff6d6;
+  --cream: #fffdf7;
+  --paper: #ffffff;
+  --ink: #30302c;
+  --muted: #73736c;
+  --line: #ebe8dc;
+  --green: #657b5e;
+  --shadow: 0 12px 35px rgba(70, 63, 35, .09);
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section,
+.toolbar {
+  scroll-margin-top: 90px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* MENU */
+
+.menu-principal {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 70px;
+
+  background: rgba(255, 250, 230, 0.96);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 5%;
+
+  border-bottom: 1px solid #eadfbd;
+  box-shadow: 0 3px 15px rgba(80, 60, 20, 0.08);
+}
+
+.menu-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.voltar {
+  color: #725d27;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.voltar:hover {
+  color: #4f4018;
+}
+
+.logo {
+  color: #66521e;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.links-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.links-menu a {
+  color: #66521e;
+  text-decoration: none;
+
+  padding: 9px 12px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  white-space: nowrap;
+
+  transition: 0.2s;
+}
+
+.links-menu a:hover {
+  background: #f3e7b7;
+}
+
+.links-menu .ajuda {
+  background: #e97844;
+  color: #493b14;
+  font-weight: bold;
+}
+
+.links-menu .ajuda:hover {
+  background: #d9ad2e;
+}
+
+
+/* CABEÇALHO */
+
+header {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(246, 201, 69, .38),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fffdf7 0%,
+      #fff9e9 100%
+    );
+
+  border-bottom: 1px solid var(--line);
+}
+
+.hero {
+  max-width: 1180px;
+  margin: auto;
+  padding: 46px 24px 58px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: var(--yellow-soft);
+  color: #80640a;
+
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.7rem);
+  line-height: .95;
+  letter-spacing: -.065em;
+
+  margin: 20px 0 18px;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 720px;
+
+  font-size: 1.15rem;
+  color: var(--muted);
+
+  margin: 0;
+}
+
+.intro {
+  margin-top: 28px;
+
+  padding: 20px 22px;
+
+  border-left: 4px solid var(--yellow);
+
+  max-width: 760px;
+
+  background: rgba(255, 255, 255, .62);
+
+  border-radius: 0 16px 16px 0;
+}
+
+
+/* AVISO */
+
+.help-box {
+  max-width: 760px;
+
+  margin-top: 18px;
+
+  padding: 18px 20px;
+
+  background: #fff8df;
+
+  border: 1px solid #eadca8;
+
+  border-radius: 16px;
+
+  font-size: .92rem;
+
+  color: #5d522f;
+}
+
+.help-box strong {
+  color: #443b20;
+}
+
+.help-box a {
+  color: #705700;
+  font-weight: 800;
+}
+
+
+/* CONTEÚDO */
+
+main {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 38px 24px 80px;
+}
+
+
+/* FILTROS */
+
+.toolbar {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 25px;
+}
+
+.categories {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+.filter {
+  border: 1px solid var(--line);
+
+  background: #fff;
+
+  border-radius: 999px;
+
+  padding: 9px 14px;
+
+  color: #66665f;
+
+  transition: .2s;
+}
+
+.filter:hover,
+.filter.active {
+  background: var(--ink);
+
+  border-color: var(--ink);
+
+  color: #fff;
+}
+
+.search {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid var(--line);
+
+  background: #fff;
+
+  border-radius: 999px;
+
+  padding: 9px 14px;
+
+  min-width: 220px;
+}
+
+.search input {
+  border: 0;
+
+  outline: 0;
+
+  width: 100%;
+
+  background: transparent;
+
+  color: var(--ink);
+}
+
+
+/* DESTAQUE */
+
+.featured {
+  display: grid;
+
+  grid-template-columns: 1.15fr .85fr;
+
+  overflow: hidden;
+
+  background: #30302c;
+
+  color: #fff;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  margin-bottom: 45px;
+}
+
+.featured-copy {
+  padding: 38px;
+}
+
+.featured-art {
+  min-height: 310px;
+
+  background:
+    radial-gradient(
+      circle at 60% 35%,
+      #ffe98e 0 9%,
+      transparent 10%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      #f6c945 0 24%,
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #657b5e,
+      #3f503c
+    );
+
+  position: relative;
+}
+
+.featured-art:after {
+  content: "✦";
+
+  position: absolute;
+
+  font-size: 9rem;
+
+  color: rgba(255, 255, 255, .16);
+
+  right: 12%;
+
+  bottom: 4%;
+
+  transform: rotate(12deg);
+}
+
+.tag {
+  font-size: .78rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: .12em;
+
+  font-weight: 800;
+
+  color: #9c7a00;
+}
+
+.featured .tag {
+  color: #f6d86e;
+}
+
+.featured h2 {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  line-height: 1.05;
+
+  font-weight: bold;
+
+  margin: 12px 0;
+}
+
+.featured p {
+  color: #d8d8d2;
+
+  max-width: 560px;
+}
+
+.featured-author {
+  font-size: .88rem;
+
+  color: #d1d1ca;
+
+  margin-top: 12px;
+}
+
+.read-btn {
+  display: inline-flex;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: var(--yellow);
+
+  color: #3c330f;
+
+  font-weight: 800;
+
+  padding: 12px 18px;
+
+  margin-top: 15px;
+
+  text-decoration: none;
+}
+
+
+/* SEÇÕES */
+
+.reading-section {
+  margin-top: 52px;
+}
+
+.section-title {
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+}
+
+.section-title span {
+  color: var(--muted);
+
+  font-size: .9rem;
+}
+
+.section-description {
+  color: var(--muted);
+
+  margin-top: -8px;
+
+  margin-bottom: 20px;
+
+  max-width: 700px;
+}
+
+
+/* CARDS */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.card {
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  padding: 24px;
+
+  min-height: 310px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-shadow: 0 4px 18px rgba(70, 63, 35, .035);
+
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 1.5rem;
+
+  line-height: 1.12;
+
+  font-weight: bold;
+
+  margin: 10px 0;
+}
+
+.card p {
+  color: var(--muted);
+
+  margin: 0 0 15px;
+}
+
+.author {
+  font-size: .88rem;
+
+  color: #55554e;
+
+  margin-bottom: 10px;
+}
+
+.author strong {
+  color: var(--ink);
+}
+
+.source {
+  font-size: .8rem;
+
+  color: #8b8b82;
+
+  margin-bottom: 18px;
+}
+
+.meta {
+  margin-top: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.length {
+  display: inline-block;
+
+  background: #f7f4e9;
+
+  color: #686252;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: .75rem;
+}
+
+.open {
+  display: inline-block;
+
+  border: 0;
+
+  background: none;
+
+  font-weight: 800;
+
+  color: #796000;
+
+  padding: 0;
+
+  text-decoration: none;
+}
+
+
+/* RODAPÉ */
+
+footer {
+  border-top: 1px solid var(--line);
+
+  padding: 30px 24px;
+
+  text-align: center;
+
+  color: #88877e;
+
+  font-size: .86rem;
+}
+
+footer a {
+  color: #796000;
+
+  font-weight: 700;
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width: 900px) {
+
+  .menu-principal {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .menu-esquerda {
+    flex-shrink: 0;
+  }
+
+  .links-menu {
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
+
+}
+
+@media(max-width: 850px) {
+
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-art {
+    min-height: 180px;
+    order: -1;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width: 600px) {
+
+  .hero {
+    padding-top: 30px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .toolbar {
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-copy {
+    padding: 28px;
+  }
+
+  .section-title {
+    display: block;
+  }
+
+  .section-title span {
+    display: block;
+
+    margin-top: 5px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- MENU -->
+
+<nav class="menu-principal">
+
+  <div class="menu-esquerda">
+
+    <a href="index.html" class="voltar">
+      ← Voltar
+    </a>
+
+    <a href="index.html" class="logo">
+      Antes de Desistir  <img src="img/floramarela.png" alt="Ícone">
+    </a>
+
+  </div>
+
+
+  <div class="links-menu">
+
+    <a href="#inicio">
+      Início
+    </a>
+
+    <a href="#rapidas-section">
+      Curtas
+    </a>
+
+    <a href="#medias-section">
+      Médias
+    </a>
+
+    <a href="#longas-section">
+      Longas
+    </a>
+
+    <a href="#busca"
+      class="logo">
+      <img src="img/buscar.png" alt="Buscar" style="width: 1.25rem; height: 1.25rem;"> Buscar
+    </a>
+
+    <a
+      href="https://cvv.org.br/"
+      target="_blank"
+      class="ajuda logo">
+
+      <img src="img/ajuda!.png" alt="Preciso de ajuda" style="width: 1.25rem; height: 1.25rem;"> Preciso de ajuda
+
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- CABEÇALHO -->
+
+<header>
+
+  <section
+    class="hero"
+    id="inicio">
+
+    <span class="eyebrow">
+      📖 um lugar para ler no seu ritmo
+    </span>
+
+
+    <h1>
+      Mergulhar no diverso
+    </h1>
+
+
+    <p>
+
+      Nem todo mundo quer ler a mesma quantidade.
+      Aqui você pode escolher entre uma leitura rápida,
+      uma reflexão um pouco maior ou um texto para
+      realmente mergulhar.
+
+    </p>
+
+
+    <div class="intro">
+
+      Os conteúdos desta página são textos reais publicados
+      por seus autores e instituições de origem. O site
+      <strong>Antes de Desistir</strong> apenas organiza as
+      indicações e direciona você para a fonte oficial.
+
+    </div>
+
+
+    <div class="help-box">
+
+      <strong>Se hoje estiver muito difícil:</strong>
+
+      você não precisa enfrentar isso sozinho.
+      O CVV atende gratuitamente pelo
+      <strong>188</strong>, 24 horas por dia.
+
+      Se houver perigo imediato, procure um serviço
+      de emergência ou vá a uma unidade de atendimento.
+
+      <a
+        href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Saiba onde buscar ajuda →
+
+      </a>
+
+    </div>
+
+  </section>
+
+</header>
+
+
+<main>
+
+
+<!-- FILTROS -->
+
+<div class="toolbar">
+
+  <div
+    class="categories"
+    aria-label="Categorias">
+
+    <button
+      class="filter active"
+      data-filter="Todos">
+
+      Todos
+
+    </button>
+
+    <button
+      class="filter"
+      data-filter="Saúde mental">
+
+      Saúde mental
+
+    </button>
+
+    <button
+      class="filter"
+      data-filter="Reflexões">
+
+      Reflexões
+
+    </button>
+
+    <button
+      class="filter"
+      data-filter="Entenda">
+
+      Entenda
+
+    </button>
+
+    <button
+      class="filter"
+      data-filter="Cotidiano">
+
+      Cotidiano
+
+    </button>
+
+    <button
+      class="filter"
+      data-filter="Arte & cultura">
+
+      Arte & cultura
+
+    </button>
+
+  </div>
+
+
+  <label
+    class="search"
+    id="busca">
+
+    ⌕
+
+    <input
+      id="search"
+      type="search"
+      placeholder="Procurar uma leitura...">
+
+  </label>
+
+</div>
+
+
+<!-- DESTAQUE -->
+
+<section class="featured">
+
+  <div class="featured-copy">
+
+    <span class="tag">
+      SETEMBRO AMARELO · LEITURA EM DESTAQUE
+    </span>
+
+    <h2>
+      Escutar é estar presente
+    </h2>
+
+    <p>
+
+      Uma leitura do Centro de Valorização da Vida
+      sobre escuta, presença e acolhimento durante
+      o Setembro Amarelo de 2026.
+
+    </p>
+
+    <div class="featured-author">
+
+      Autoria: Centro de Valorização da Vida (CVV)
+
+    </div>
+
+    <a
+      class="read-btn"
+      href="https://cvv.org.br/escutar-e-estar-presente/"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Ler no site do CVV →
+
+    </a>
+
+  </div>
+
+
+  <div
+    class="featured-art"
+    aria-hidden="true">
+
+  </div>
+
+</section>
+
+
+<!-- LEITURAS CURTAS -->
+
+<section
+  class="reading-section"
+  id="rapidas-section">
+
+  <div class="section-title">
+
+    <h2>
+      <img src="img/floramarela.png" alt="Ícone"> Para ler rapidinho
+    </h2>
+
+    <span>
+      Leituras curtas
+    </span>
+
+  </div>
+
+
+  <p class="section-description">
+
+    Para aqueles momentos em que você não está
+    com muita energia para ler, mas gostaria de
+    encontrar alguma coisa interessante.
+
+  </p>
+
+
+  <div class="grid">
+
+    <article
+      class="card"
+      data-category="Saúde mental">
+
+      <span class="tag">
+        Saúde mental
+      </span>
+
+      <h3>
+        Escutar é estar presente
+      </h3>
+
+      <p>
+        Uma reflexão sobre a importância de ouvir alguém
+        com atenção, respeito e acolhimento.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Centro de Valorização da Vida (CVV)
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Blog do CVV · Setembro Amarelo 2026
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Curta
+        </span>
+
+        <a
+          class="open"
+          href="https://cvv.org.br/escutar-e-estar-presente/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Reflexões">
+
+      <span class="tag">
+        Reflexões
+      </span>
+
+      <h3>
+        Atenção aproxima as pessoas
+      </h3>
+
+      <p>
+        Um texto sobre atenção, escuta empática e a
+        importância de perceber quem está ao nosso redor.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Centro de Valorização da Vida (CVV)
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Blog do CVV · Setembro Amarelo 2024
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Curta
+        </span>
+
+        <a
+          class="open"
+          href="https://cvv.org.br/atencao-aproxima-as-pessoas/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Saúde mental">
+
+      <span class="tag">
+        Saúde mental
+      </span>
+
+      <h3>
+        Você se conhece?
+      </h3>
+
+      <p>
+        Uma reflexão sobre autoconhecimento, percepção
+        de si e a maneira como nos relacionamos com outras pessoas.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Adriana — CVV Jabaquara
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Blog do CVV · Autoconhecimento
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Curta
+        </span>
+
+        <a
+          class="open"
+          href="https://cvv.org.br/voce-se-conhece/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- LEITURAS MÉDIAS -->
+
+<section
+  class="reading-section"
+  id="medias-section">
+
+  <div class="section-title">
+
+    <h2>
+      <img src="img/floramarela.png" alt="Ícone"> Para ficar mais um pouco
+    </h2>
+
+    <span>
+      Leituras médias
+    </span>
+
+  </div>
+
+
+  <p class="section-description">
+
+    Textos para quando você quer parar por alguns
+    minutos e refletir sobre sentimentos, relações
+    e experiências humanas.
+
+  </p>
+
+
+  <div class="grid">
+
+    <article
+      class="card"
+      data-category="Saúde mental">
+
+      <span class="tag">
+        Saúde mental
+      </span>
+
+      <h3>
+        Poder transformador do diálogo
+      </h3>
+
+      <p>
+        Uma leitura sobre conversa, acolhimento e a
+        importância de não atravessar momentos difíceis
+        completamente sozinho.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Centro de Valorização da Vida (CVV)
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Blog do CVV · Setembro Amarelo 2025
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Média
+        </span>
+
+        <a
+          class="open"
+          href="https://cvv.org.br/poder-transformador-do-dialogo/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Entenda">
+
+      <span class="tag">
+        Entenda
+      </span>
+
+      <h3>
+        Suicídio — Prevenção
+      </h3>
+
+      <p>
+        Informações oficiais sobre prevenção, sinais de
+        alerta, pedido de ajuda e locais onde procurar atendimento.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Ministério da Saúde
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Ministério da Saúde · Governo Federal
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Média
+        </span>
+
+        <a
+          class="open"
+          href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Saúde mental">
+
+      <span class="tag">
+        Saúde mental
+      </span>
+
+      <h3>
+        Mental health
+      </h3>
+
+      <p>
+        Uma visão geral sobre saúde mental, fatores que
+        podem afetá-la e possibilidades de cuidado.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Organização Mundial da Saúde (OMS)
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        World Health Organization
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Média
+        </span>
+
+        <a
+          class="open"
+          href="https://www.who.int/news-room/fact-sheets/mental-health-strengthening-our-response"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- LEITURAS LONGAS -->
+
+<section
+  class="reading-section"
+  id="longas-section">
+
+  <div class="section-title">
+
+    <h2>
+      <img src="img/floramarela.png" alt="Ícone"> Para mergulhar
+    </h2>
+
+    <span>
+      Leituras longas
+    </span>
+
+  </div>
+
+
+  <p class="section-description">
+
+    Artigos mais extensos para quem gosta de
+    pesquisar, entender melhor um assunto ou
+    simplesmente passar mais tempo lendo.
+
+  </p>
+
+
+  <div class="grid">
+
+    <article
+      class="card"
+      data-category="Arte & cultura">
+
+      <span class="tag">
+        Arte & cultura
+      </span>
+
+      <h3>
+        Arte-cultura como possibilidade terapêutica
+        na qualidade de vida dos usuários dos serviços
+        de saúde mental
+      </h3>
+
+      <p>
+        Artigo científico que discute experiências de
+        arte-cultura e sua relação com reabilitação
+        psicossocial e qualidade de vida em saúde mental.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Vera F. Gonçalves; Claudiney Augusto Yamaguti;
+        Suzana Kalckmann
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Boletim do Instituto de Saúde — São Paulo · 2019
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Longa
+        </span>
+
+        <a
+          class="open"
+          href="https://periodicos.saude.sp.gov.br/bis/article/view/34558"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Entenda">
+
+      <span class="tag">
+        Entenda
+      </span>
+
+      <h3>
+        Mental health in emergencies
+      </h3>
+
+      <p>
+        Material aprofundado sobre sofrimento psicológico,
+        saúde mental e formas de apoio em situações de emergência.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Organização Mundial da Saúde (OMS)
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        World Health Organization · 2025
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Longa
+        </span>
+
+        <a
+          class="open"
+          href="https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="card"
+      data-category="Saúde mental">
+
+      <span class="tag">
+        Saúde mental
+      </span>
+
+      <h3>
+        Ações do Ministério da Saúde
+      </h3>
+
+      <p>
+        Informações sobre políticas públicas, Rede de
+        Atenção Psicossocial e ações relacionadas à
+        prevenção do suicídio no SUS.
+      </p>
+
+      <div class="author">
+
+        <strong>Autor:</strong><br>
+
+        Ministério da Saúde
+
+      </div>
+
+      <div class="source">
+
+        Fonte:
+        Ministério da Saúde · Governo Federal
+
+      </div>
+
+      <div class="meta">
+
+        <span class="length">
+          Longa
+        </span>
+
+        <a
+          class="open"
+          href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao/acoes-do-ministerio-da-saude"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Ler no site oficial →
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <p>
+    Antes de Desistir · Um espaço de companhia,
+    informação e acolhimento.
+  </p>
+
+  <p>
+    Os textos pertencem aos seus respectivos
+    autores e instituições.
+  </p>
+
+  <p>
+
+    Precisa conversar?
+
+    <a
+      href="https://cvv.org.br/"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      CVV · 188
+
+    </a>
+
+  </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+let categoria = "Todos";
+
+let botoes = document.querySelectorAll(".filter");
+let cards = document.querySelectorAll(".card");
+let busca = document.getElementById("search");
+
+
+for (let botao of botoes) {
+
+  botao.onclick = function() {
+
+    categoria = botao.dataset.filter;
+
+    for (let b of botoes) {
+      b.classList.remove("active");
+    }
+
+    botao.classList.add("active");
+
+    filtrar();
+
+  };
+
+}
+
+
+busca.oninput = filtrar;
+
+
+function filtrar() {
+
+  let texto = busca.value.toLowerCase();
+
+  for (let card of cards) {
+
+    let categoriaCard = card.dataset.category;
+    let conteudo = card.innerText.toLowerCase();
+
+    let categoriaCerta =
+      categoria == "Todos" ||
+      categoriaCard == categoria;
+
+    let textoCerto =
+      conteudo.includes(texto);
+
+    if (categoriaCerta && textoCerto) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

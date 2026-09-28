@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fale Conosco — Antes de Desistir</title>
+
+<style>
+:root{
+  --yellow:#ffd84d;
+  --yellow2:#fff3b0;
+  --gold:#e8ad22;
+  --cream:#fffdf5;
+  --ink:#3d392d;
+  --muted:#77715f;
+  --card:#ffffff;
+  --line:#f1e4ad;
+  --shadow:0 18px 45px rgba(106,88,20,.12);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, #fff1a7 0 8%, transparent 28%),
+    radial-gradient(circle at 90% 20%, #fff7ce 0 7%, transparent 25%),
+    var(--cream);
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+  background:rgba(255,253,245,.88);
+  border-bottom:1px solid var(--line);
+}
+
+.navin{
+  max-width:1120px;
+  margin:auto;
+  padding:14px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.logo span{
+  color:#d49b00;
+}
+
+.navlinks{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.navlink{
+  border:0;
+  background:transparent;
+  padding:9px 12px;
+  border-radius:999px;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.navlink:hover{
+  background:var(--yellow2);
+  color:var(--ink);
+}
+
+main{
+  max-width:1120px;
+  margin:auto;
+  padding:0 22px;
+}
+
+.hero{
+  min-height:430px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+  padding:70px 0 50px;
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#fff5bf;
+  border:1px solid #f4dc73;
+  padding:8px 13px;
+  border-radius:999px;
+  font-size:.86rem;
+  font-weight:800;
+  color:#806100;
+}
+
+h1{
+  font-size:clamp(3.5rem,8vw,6.5rem);
+  line-height:.88;
+  letter-spacing:-.07em;
+  margin:20px 0;
+  color:#e6ad1c;
+}
+
+.hero h2{
+  font-size:clamp(1.2rem,2vw,1.6rem);
+  font-weight:500;
+  line-height:1.45;
+  max-width:650px;
+}
+
+.hero p{
+  font-size:1.08rem;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:650px;
+}
+
+.hero-art{
+  min-height:300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.hero-art img{
+  width:min(100%,360px);
+  max-height:330px;
+  object-fit:contain;
+  filter:drop-shadow(0 12px 8px rgba(95,72,0,.12));
+}
+
+.note{
+  position:absolute;
+  right:0;
+  bottom:15px;
+  background:#fff;
+  padding:20px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  width:200px;
+  transform:rotate(3deg);
+}
+
+.note b{
+  display:block;
+  margin-bottom:7px;
+}
+
+.note small{
+  color:var(--muted);
+  line-height:1.4;
+}
+
+.section{
+  padding:55px 0;
+}
+
+.section-head{
+  margin-bottom:30px;
+}
+
+.eyebrow{
+  color:#b38300;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.75rem;
+  font-weight:900;
+}
+
+h3{
+  font-size:clamp(2rem,4vw,3rem);
+  margin:8px 0;
+  letter-spacing:-.04em;
+}
+
+.section-head p{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.7;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  background:#fff5bf;
+  border-radius:15px;
+  font-size:1.5rem;
+  margin-bottom:15px;
+}
+
+.card h4{
+  margin:0 0 8px;
+  font-size:1.2rem;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+  margin:0;
+}
+
+.form-area{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:22px;
+  align-items:start;
+}
+
+.info-box,
+.form-box,
+.faq-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.info-box{
+  background:#fff8d6;
+  border-color:#eed37b;
+}
+
+.info-box h4,
+.form-box h4,
+.faq-box h4{
+  margin-top:0;
+  color:#806100;
+  font-size:1.25rem;
+}
+
+.info-box p,
+.info-box li{
+  color:#5f5949;
+  line-height:1.65;
+}
+
+.info-box ul{
+  padding-left:20px;
+}
+
+.field{
+  margin-bottom:18px;
+}
+
+.field label{
+  display:block;
+  margin-bottom:7px;
+  font-weight:800;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:13px 14px;
+  outline:none;
+  background:#fffdf8;
+  color:var(--ink);
+}
+
+.field textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#e9bb2e;
+  box-shadow:0 0 0 4px #fff3b0;
+}
+
+.required{
+  color:#b38300;
+}
+
+.check{
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+
+.check input{
+  margin-top:4px;
+}
+
+.btn{
+  border:0;
+  border-radius:15px;
+  padding:14px 20px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.btn.primary{
+  background:var(--yellow);
+  color:#4b3b00;
+  box-shadow:0 8px 20px rgba(130,100,0,.1);
+}
+
+.btn.secondary{
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--ink);
+  text-decoration:none;
+  display:inline-block;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+#mensagem-enviada{
+  display:none;
+  margin-top:18px;
+  padding:17px;
+  border-radius:17px;
+  background:#fff9da;
+  border:1px solid #e6c95b;
+  color:#655000;
+  line-height:1.6;
+}
+
+.faq{
+  border-top:1px solid var(--line);
+}
+
+.faq:first-of-type{
+  border-top:0;
+}
+
+.faq-question{
+  width:100%;
+  border:0;
+  background:transparent;
+  padding:18px 0;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-weight:800;
+  color:var(--ink);
+}
+
+.faq-question span{
+  color:#b38300;
+  font-size:1.2rem;
+}
+
+.faq-answer{
+  display:none;
+  color:var(--muted);
+  line-height:1.7;
+  padding:0 0 18px;
+}
+
+.faq.open .faq-answer{
+  display:block;
+}
+
+.faq.open .faq-question span{
+  transform:rotate(45deg);
+}
+
+.feedback{
+  background:#fff8d6;
+  border:1px solid #eed37b;
+  border-radius:25px;
+  padding:30px;
+}
+
+.feedback p{
+  color:#5f5949;
+  line-height:1.7;
+  max-width:700px;
+}
+
+.stars{
+  display:flex;
+  gap:8px;
+  margin:18px 0;
+}
+
+.star{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  padding:9px 13px;
+  font-size:1.2rem;
+}
+
+.star.selecionado{
+  background:var(--yellow);
+}
+
+#feedback-status{
+  display:none;
+  margin-top:15px;
+  color:#806100;
+  font-weight:700;
+}
+
+footer{
+  padding:55px 22px;
+  background:#3e3829;
+  color:#fff9d9;
+  margin-top:35px;
+}
+
+.footin{
+  max-width:1120px;
+  margin:auto;
+}
+
+.footin p{
+  color:#ded6b5;
+  line-height:1.7;
+  max-width:750px;
+}
+
+@media(max-width:800px){
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:45px;
+  }
+
+  .hero-art{
+    min-height:280px;
+  }
+
+  .note{
+    right:5px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-area{
+    grid-template-columns:1fr;
+  }
+
+  .navin{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .navlinks{
+    justify-content:center;
+  }
+
+  h1{
+    font-size:4.5rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="navin">
+
+    <div class="logo">
+      Antes de <span>Desistir</span>
+    </div>
+
+    <div class="navlinks">
+      <a href="index.html" class="navlink">Início</a>
+      <a href="index.html#interacoes" class="navlink">Explorar</a>
+      <a href="#contato" class="navlink">Fale Conosco</a>
+      <a href="index.html#ajuda" class="navlink">Ajuda</a>
+      <a href="https://cvv.org.br/" target="_blank" class="navlink">🌼 Preciso de ajuda</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+
+  <div>
+
+    <div class="kicker">
+      🌼 Estamos ouvindo
+    </div>
+
+    <h1>
+      Fale<br>conosco.
+    </h1>
+
+    <h2>
+      Tem uma dúvida, ideia, sugestão ou algo que gostaria de contar?
+    </h2>
+
+    <p>
+      Este espaço foi criado para você ajudar a melhorar o projeto.
+      Conte o que funcionou, o que poderia ser diferente ou simplesmente
+      deixe uma mensagem.
+    </p>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:25px;">
+      <a href="#contato" class="btn primary">
+        Enviar uma mensagem ↓
+      </a>
+
+      <a href="#duvidas" class="btn secondary">
+        Ver dúvidas frequentes
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-art">
+
+    <img
+      src="img/borbossol.png"
+      alt="Ilustração decorativa de uma flor amarela"
+    >
+
+    <div class="note">
+      <b>Sua opinião importa.</b>
+      <small>
+        Cada sugestão pode ajudar a tornar este espaço mais simples,
+        acolhedor e útil.
+      </small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Como podemos ajudar?</div>
+
+    <h3>Escolha um assunto</h3>
+
+    <p>
+      Você pode usar o formulário abaixo para enviar qualquer uma destas
+      coisas. Não existe uma opção certa ou errada.
+    </p>
+
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="card-icon">💡</div>
+      <h4>Uma sugestão</h4>
+      <p>
+        Tem uma ideia para uma nova atividade, página ou recurso?
+        Conte para a gente.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">❓</div>
+      <h4>Uma dúvida</h4>
+      <p>
+        Não entendeu alguma parte do site ou não sabe como usar
+        determinada função? Pergunte.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🐛</div>
+      <h4>Encontrou um problema?</h4>
+      <p>
+        Alguma página, botão, imagem ou função não está funcionando?
+        Avise para que possamos identificar o problema.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">💛</div>
+      <h4>Deixar um feedback</h4>
+      <p>
+        Conte como foi sua experiência e o que você achou do site.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🌻</div>
+      <h4>Uma ideia para melhorar</h4>
+      <p>
+        Pode ser algo pequeno: uma mudança visual, um texto ou uma
+        funcionalidade nova.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">💬</div>
+      <h4>Outro assunto</h4>
+      <p>
+        Se o que você quer falar não estiver aqui, tudo bem.
+        Escolha "Outro" no formulário.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="contato">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Entre em contato</div>
+
+    <h3>Envie sua mensagem</h3>
+
+    <p>
+      Preencha os campos abaixo. Você pode escrever de forma simples,
+      do seu jeito. Os campos marcados com * são obrigatórios.
+    </p>
+
+  </div>
+
+  <div class="form-area">
+
+    <div class="info-box">
+
+      <h4>Antes de enviar 🌼</h4>
+
+      <p>
+        Este formulário serve para dúvidas, sugestões, feedbacks e
+        problemas relacionados ao site.
+      </p>
+
+      <ul>
+        <li>Não é um serviço de emergência.</li>
+        <li>Você não precisa escrever de forma formal.</li>
+        <li>Explique o problema com o máximo de detalhes que puder.</li>
+        <li>Se quiser, conte também o que poderia melhorar.</li>
+      </ul>
+
+      <p>
+        <strong>Importante:</strong> se você estiver em uma situação
+        de risco ou precisar de ajuda imediata, use a área
+        <a href="index.html#ajuda" style="color:#806100;font-weight:800;">
+          Ajuda
+        </a>
+        do site.
+      </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+      <h4>Formulário de contato</h4>
+
+      <form id="formulario" onsubmit="enviarFormulario(event)">
+
+        <div class="field">
+          <label for="nome">
+            Nome <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="nome"
+            placeholder="Como podemos chamar você?"
+            required
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="email">
+            E-mail
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="seuemail@exemplo.com"
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="assunto">
+            Assunto <span class="required">*</span>
+          </label>
+
+          <select id="assunto" required>
+
+            <option value="">
+              Selecione uma opção
+            </option>
+
+            <option value="duvida">
+              Tenho uma dúvida
+            </option>
+
+            <option value="sugestao">
+              Tenho uma sugestão
+            </option>
+
+            <option value="problema">
+              Encontrei um problema
+            </option>
+
+            <option value="feedback">
+              Quero deixar um feedback
+            </option>
+
+            <option value="elogio">
+              Quero deixar um elogio
+            </option>
+
+            <option value="outro">
+              Outro assunto
+            </option>
+
+          </select>
+        </div>
+
+
+        <div class="field">
+          <label for="mensagem">
+            Mensagem <span class="required">*</span>
+          </label>
+
+          <textarea
+            id="mensagem"
+            placeholder="Escreva sua mensagem aqui..."
+            required
+          ></textarea>
+        </div>
+
+
+        <label class="check">
+          <input type="checkbox" required>
+
+          <span>
+            Confirmo que esta mensagem é sobre o site ou sobre uma
+            sugestão, dúvida ou feedback relacionado ao projeto.
+          </span>
+        </label>
+
+
+        <button type="submit" class="btn primary">
+          Enviar mensagem
+        </button>
+
+        <div id="mensagem-enviada">
+          🌼 <strong>Mensagem registrada!</strong><br>
+          Obrigado por compartilhar sua opinião. Neste protótipo,
+          a mensagem fica salva apenas neste navegador.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="duvidas">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Ajuda rápida</div>
+
+    <h3>Dúvidas frequentes</h3>
+
+    <p>
+      Talvez sua dúvida já esteja respondida aqui.
+      Clique em uma pergunta para ver a resposta.
+    </p>
+
+  </div>
+
+  <div class="faq-box">
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        O que é o projeto Antes de Desistir?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        É um projeto pensado para oferecer pequenos momentos de pausa,
+        expressão, distração, informação e caminhos para procurar ajuda.
+      </div>
+    </div>
+
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        O site substitui um profissional?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        Não. O site oferece conteúdos de acolhimento e atividades simples,
+        mas não substitui atendimento psicológico, médico ou outro
+        atendimento profissional.
+      </div>
+    </div>
+
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        Posso mandar uma sugestão?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        Sim. Use o formulário e selecione "Tenho uma sugestão".
+        Você pode sugerir novas páginas, atividades, textos, mudanças
+        visuais ou qualquer outra melhoria relacionada ao projeto.
+      </div>
+    </div>
+
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        Encontrei um botão que não funciona. O que faço?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        Escolha "Encontrei um problema" no formulário e explique o que
+        aconteceu. Se puder, diga em qual página ocorreu e o que você
+        esperava que acontecesse.
+      </div>
+    </div>
+
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        Preciso colocar meu e-mail?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        Não. O e-mail é opcional neste protótipo. Ele pode ser informado
+        caso você queira deixar um contato para uma resposta futura.
+      </div>
+    </div>
+
+
+    <div class="faq">
+      <button class="faq-question" onclick="abrirFaq(this)">
+        Minhas mensagens são enviadas para alguém?
+        <span>+</span>
+      </button>
+
+      <div class="faq-answer">
+        Nesta versão do site, o formulário funciona como uma demonstração:
+        a mensagem é salva localmente no navegador e não é enviada para
+        um servidor ou caixa de e-mail.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="feedback">
+
+    <div class="eyebrow">Uma última coisa</div>
+
+    <h3>Como foi sua experiência?</h3>
+
+    <p>
+      Se você já explorou o site, pode deixar uma avaliação rápida.
+      Isso ajuda a entender se a experiência está sendo simples de usar.
+    </p>
+
+    <div class="stars">
+
+      <button class="star" onclick="avaliar(1)">★</button>
+      <button class="star" onclick="avaliar(2)">★</button>
+      <button class="star" onclick="avaliar(3)">★</button>
+      <button class="star" onclick="avaliar(4)">★</button>
+      <button class="star" onclick="avaliar(5)">★</button>
+
+    </div>
+
+    <div id="feedback-status">
+      Obrigado pelo feedback! 🌻
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footin">
+
+    <h3>Antes de Desistir 🌻</h3>
+
+    <p>
+      Um projeto do Setembro Amarelo pensado para acolher,
+      distrair e oferecer pequenos caminhos de pausa.
+      Sua opinião também ajuda a construir este espaço.
+    </p>
+
+    <small>
+      Conteúdo de acolhimento e informação.
+      Não substitui atendimento profissional ou serviços de emergência.
+    </small>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function enviarFormulario(event){
+
+  event.preventDefault();
+
+  var nome =
+    document.getElementById("nome").value.trim();
+
+  var assunto =
+    document.getElementById("assunto").value;
+
+  var mensagem =
+    document.getElementById("mensagem").value.trim();
+
+
+  if(nome == "" || assunto == "" || mensagem == ""){
+
+    alert("Preencha os campos obrigatórios antes de enviar.");
+
+    return;
+  }
+
+
+  var contatos =
+    JSON.parse(
+      localStorage.getItem("mensagens-contato")
+    ) || [];
+
+
+  contatos.push({
+
+    nome:nome,
+
+    email:
+      document.getElementById("email").value.trim(),
+
+    assunto:assunto,
+
+    mensagem:mensagem,
+
+    data:new Date().toLocaleString("pt-BR")
+
+  });
+
+
+  localStorage.setItem(
+    "mensagens-contato",
+    JSON.stringify(contatos)
+  );
+
+
+  document.getElementById(
+    "mensagem-enviada"
+  ).style.display = "block";
+
+
+  document.getElementById(
+    "formulario"
+  ).reset();
+
+}
+
+
+function abrirFaq(botao){
+
+  var faq =
+    botao.parentElement;
+
+  faq.classList.toggle("open");
+
+}
+
+
+function avaliar(numero){
+
+  var botoes =
+    document.querySelectorAll(".star");
+
+
+  for(
+    var i = 0;
+    i < botoes.length;
+    i++
+  ){
+
+    if(i < numero){
+
+      botoes[i].classList.add(
+        "selecionado"
+      );
+
+    }else{
+
+      botoes[i].classList.remove(
+        "selecionado"
+      );
+
+    }
+
+  }
+
+
+  document.getElementById(
+    "feedback-status"
+  ).style.display = "block";
+
+
+  localStorage.setItem(
+    "avaliacao-site",
+    numero
+  );
+
+}
+
+</script>
+
+</body>
+</html>

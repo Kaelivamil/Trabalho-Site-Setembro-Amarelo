@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expressar — Antes de Desistir</title><style>
+    :root {
+      --yellow: #f6c945;
+      --yellow-soft: #fff4c7;
+      --yellow-light: #fffaf0;
+      --cream: #fffdf7;
+      --white: #ffffff;
+      --text: #39352f;
+      --muted: #777067;
+      --line: #eee5cf;
+      --brown: #8a6720;
+      --shadow: 0 14px 40px rgba(91, 70, 25, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: bold;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(246, 201, 69, .20), transparent 25%),
+        radial-gradient(circle at 92% 35%, rgba(246, 201, 69, .13), transparent 22%),
+        var(--cream);
+      line-height: 1.5;
+    }
+
+    button,
+    input,
+    textarea,
+    select,
+    a {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 12px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 253, 247, .90);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(238, 229, 207, .7);
+    }
+
+    .ajuda{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .ajuda img{
+      width:20px;
+      height:20px;
+      max-width:20px;
+      max-height:20px;
+      object-fit:contain;
+    }
+
+     .ajuda img{
+        width:20px;
+        height:20px;
+        max-width:20px;
+        max-height:20px;
+        object-fit:contain;
+        vertical-align:middle;
+      }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .back:hover {
+      color: var(--text);
+      transform: translateX(-3px);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+      font-size: .92rem;
+    }
+
+    .brand span {
+      color: var(--brown);
+    }
+
+     /* MENU DAS SEÇÕES */
+    .section-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      max-width: 760px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+      padding: 3px;
+    }
+
+    .section-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .section-nav a {
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .section-nav a:hover {
+      color: var(--text);
+      background: var(--yellow-soft);
+    }
+
+    .section-nav a:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 90px 6% 60px;
+      display: block;
+     
+      text-align: center;
+     
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-soft);
+      color: var(--brown);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      font-style: bold;
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin-bottom: 25px;
+      white-space: nowrap;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+      font-style: bold;
+      display: inline;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 1.1rem;
+       margin: 0 auto;
+    }
+
+    .hero-note {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--yellow);
+      background: rgba(255,255,255,.65);
+      border-radius: 0 18px 18px 0;
+      color: #625c52;
+      font-size: .98rem;
+      text-align: left;
+    }
+
+    /* DECORATIVE ART */
+    .hero-art {
+      min-height: 390px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #f1df9c;
+    }
+
+    .hero-art::before {
+      width: 270px;
+      height: 270px;
+    }
+
+    .hero-art::after {
+      width: 190px;
+      height: 190px;
+    }
+
+    .sun {
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: var(--yellow);
+      top: 35px;
+      right: 42px;
+      opacity: .85;
+    }
+
+    .flower {
+      position: absolute;
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background: var(--yellow-soft);
+      left: 35px;
+      bottom: 35px;
+      box-shadow:
+        38px -22px 0 -9px #fff0b2,
+        70px 9px 0 -14px #ffe79a,
+        30px 45px 0 -11px #ffefbd;
+    }
+
+    .paper {
+      width: 190px;
+      height: 245px;
+      background: #fffdf8;
+      border: 1px solid #eee5cf;
+      border-radius: 10px;
+      transform: rotate(-6deg);
+      box-shadow: 0 18px 30px rgba(70, 55, 25, .12);
+      position: relative;
+      z-index: 2;
+    }
+
+    .paper::before,
+    .paper::after {
+      content: "";
+      position: absolute;
+      left: 35px;
+      width: 110px;
+      height: 3px;
+      background: #eadfbf;
+      border-radius: 5px;
+    }
+
+    .paper::before {
+      top: 43px;
+      box-shadow:
+        0 28px #eadfbf,
+        0 56px #eadfbf;
+    }
+
+    .paper::after {
+      top: 166px;
+      width: 70px;
+    }
+
+    .scribble {
+      position: absolute;
+      z-index: 3;
+      width: 95px;
+      height: 80px;
+      border: 4px solid #e0b630;
+      border-color: #e0b630 transparent #e0b630 transparent;
+      border-radius: 50%;
+      transform: rotate(25deg);
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 55px 6%;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -.03em;
+      margin-bottom: 8px;
+      font-style: bold;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* DRAWING AREA */
+    .drawing-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .drawing-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tool {
+      border: 1px solid var(--line);
+      background: var(--cream);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .tool:hover {
+      background: var(--yellow-soft);
+      border-color: #e9cf76;
+    }
+
+    .colors {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .color {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    .c1 { background: #e8b83f; }
+    .c2 { background: #e98d6a; }
+    .c3 { background: #9aa86f; }
+    .c4 { background: #7e9fbc; }
+    .c5 { background: #8f7aa8; }
+    .c6 { background: #4d4943; }
+
+    .canvas {
+      height: 390px;
+      margin-top: 20px;
+      border: 2px dashed #eadfbd;
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(246,201,69,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(246,201,69,.045) 1px, transparent 1px),
+        #fffefa;
+      background-size: 35px 35px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .canvas-message {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #b0a898;
+      pointer-events: none;
+    }
+
+    .canvas-message strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #8c8578;
+      margin-bottom: 5px;
+    }
+
+    .drawing-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-top: 18px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 13px;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: var(--yellow-soft);
+      color: var(--brown);
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #40330e;
+    }
+
+    /* OPTIONS */
+    .options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .option {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      min-height: 190px;
+      box-shadow: 0 8px 25px rgba(91,70,25,.045);
+      transition: .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #ead68f;
+    }
+
+    .option-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--yellow-soft);
+      color: var(--brown);
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+
+    .option h3 {
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+      font-style: bold;
+    }
+
+    .option p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .option .arrow {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      color: #b79842;
+      font-size: 1.25rem;
+    }
+
+    /* FEELING */
+    .feeling {
+      background: #403b33;
+      color: white;
+      border-radius: 32px;
+      padding: 45px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feeling::after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.14);
+      right: -70px;
+      top: -80px;
+    }
+
+    .feeling-label {
+      color: #f6d568;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .feeling h2 {
+      max-width: 700px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 15px;
+      font-style: bold;
+    }
+
+    .feeling p {
+      color: #d9d4ca;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .question-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .question {
+      border: 1px solid rgba(255,255,255,.17);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #eee9df;
+      font-size: .9rem;
+    }
+
+    /* RELAX */
+    .relax-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .relax-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .relax-item:hover {
+      background: var(--yellow-soft);
+      transform: translateY(-3px);
+    }
+
+    .relax-symbol {
+      font-size: 2rem;
+      color: #c49d31;
+      margin-bottom: 12px;
+    }
+
+    .relax-item h3 {
+      font-size: .95rem;
+      font-style: bold;
+    }
+
+    /* CHALLENGE */
+    .challenge {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #fff4c7, #fffdf7);
+      border: 1px solid #efdda0;
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .challenge h3 {
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+      font-style: bold;
+    }
+
+    .challenge p {
+      color: var(--muted);
+    }
+
+    .relax-item, .challenge-card, .question {
+      font: inherit;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .relax-item {
+      border: 1px solid var(--line);
+      width: 100%;
+    }
+
+    .relax-item:focus-visible, .challenge-card:focus-visible, .question:focus-visible {
+      outline: 3px solid rgba(224,182,48,.35);
+      outline-offset: 3px;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .challenge-card {
+      border: 1px solid #efdda0;
+      background: linear-gradient(145deg, #fff8d9, #fffdf7);
+      border-radius: 20px;
+      padding: 22px;
+      min-height: 155px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      text-align: left;
+      transition: .2s;
+    }
+
+    .challenge-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(76,64,42,.08);
+    }
+
+    .challenge-card span {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: #b18c2b;
+      font-weight: 800;
+    }
+
+    .challenge-card strong { font-size: 1.02rem; }
+    .challenge-card small { color: var(--muted); line-height: 1.45; }
+
+    .question {
+      color: #eee9df;
+      border: 1px solid rgba(255,255,255,.17);
+      background: rgba(255,255,255,.06);
+    }
+
+    .question:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(246,213,104,.55);
+    }
+
+    @media (max-width: 900px) {
+      .challenge-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .challenge-grid { grid-template-columns: 1fr; }
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      padding: 40px 6%;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: #8a8377;
+      font-size: .9rem;
+    }
+
+    footer strong {
+      color: var(--brown);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+      }
+
+      .hero-art {
+        min-height: 300px;
+      }
+
+      .options {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .relax-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .brand {
+        display: none;
+      }
+
+      .hero,
+      .section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero h1 {
+        font-size: 3.6rem;
+        font-style: bold;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .relax-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .drawing-card {
+        padding: 14px;
+      }
+
+      .colors {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .canvas {
+        height: 300px;
+      }
+
+      .feeling {
+        padding: 30px 24px;
+      }
+
+      .challenge {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  
+  .drawing-option {
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border: 1px solid var(--line);
+  }
+
+  .drawing-option:focus-visible,
+  .template-btn:focus-visible,
+  .tool:focus-visible,
+  .btn:focus-visible {
+    outline: 3px solid rgba(246, 201, 69, .45);
+    outline-offset: 3px;
+  }
+
+  .drawing-objective {
+    background: #403b33;
+    color: #fff;
+    border-radius: 20px;
+    padding: 22px 25px;
+    margin: 0 0 18px;
+    border-left: 5px solid var(--yellow);
+    transition: .2s;
+  }
+
+  .objective-kicker {
+    display: block;
+    color: #c49d31;
+    font-size: .72rem;
+    letter-spacing: .13em;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .drawing-objective strong {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .drawing-objective p {
+    margin: 0;
+    color: #d9d4ca;
+  }
+
+  .coloring-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+  }
+
+  .coloring-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .coloring-toolbar > div:first-child {
+    min-width: 170px;
+  }
+
+  .coloring-toolbar strong {
+    display: block;
+    font-size: 1.08rem;
+  }
+
+  .coloring-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .color-size {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .color-size input {
+    width: 85px;
+    accent-color: #e0b630;
+  }
+
+  .coloring-colors {
+    margin-left: auto;
+  }
+
+  .template-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 17px 0;
+  }
+
+  .template-btn {
+    border: 1px solid var(--line);
+    background: var(--cream);
+    border-radius: 999px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .template-btn:hover,
+  .template-btn.active {
+    background: var(--yellow-soft);
+    border-color: #e0b630;
+  }
+
+  .color-canvas-wrap {
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    border: 2px dashed #eadfbd;
+    border-radius: 18px;
+    background: #fffefa;
+  }
+
+  #colorCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+    cursor: crosshair;
+  }
+
+  .coloring-hint {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 10px 13px;
+    color: var(--muted);
+    font-size: .78rem;
+    pointer-events: none;
+    max-width: 360px;
+  }
+
+  .coloring-hint strong {
+    color: var(--text);
+  }
+
+  .coloring-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 17px;
+  }
+
+  @media (max-width: 700px) {
+    .coloring-colors {
+      margin-left: 0;
+    }
+
+    .color-canvas-wrap {
+      height: 350px;
+    }
+  }
+
+  #drawingCanvas { position:absolute; inset:0; width:100%; height:100%; display:block; touch-action:none; cursor:crosshair; z-index:2; }
+  #canvasMessage { z-index:1; }
+  .color { padding:0; cursor:pointer; }
+  .tool.active { background:#fff4c7; border-color:#e0b630; box-shadow:inset 0 0 0 1px #e0b630; }
+  #drawingArea.drawing #canvasMessage { opacity:0; }
+  #sizeRange { cursor:pointer; }
+</style>
+</head>
+
+<body>
+
+  <header>
+    <a class="back" href="index.html" aria-label="Voltar para a página inicial">
+      ← Voltar
+    </a>
+
+    <nav class="section-nav" aria-label="Navegação das seções">
+      <a href="#rabiscos">Rabiscos</a>
+      <a href="#colorir">Colorir</a>
+      <a href="#sentimento">Seu sentimento</a>
+      <a href="#relaxar">Apenas relaxe</a>
+      <a href="#desafios">Desafios</a>
+      <a
+      href="https://cvv.org.br/"
+      target="_blank"
+      class="header ajuda"
+      >
+
+      <img
+      src="img/ajuda!.png"
+      alt="Preciso de ajuda"
+      >
+
+      Preciso de ajuda
+
+      </a>
+    </nav>
+    <div class="brand">
+      ANTES <span>DE</span> DESISTIR
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="eyebrow">✦ EXPRESSAR · DESENHAR</div>
+
+        <h1>Não precisa <span>ficar bonito.</span></h1>
+
+        <p>
+          Só precisa sair de você. Desenhe, rabisque, escolha cores
+          ou simplesmente faça alguma coisa por alguns minutos.
+        </p>
+
+        <div class="hero-note">
+          Você não precisa saber desenhar. Aqui não existe certo ou errado.
+          Este espaço é seu.
+        </div>
+      </div>
+    </section>
+
+    <!-- RABISCOS -->
+    <section class="section" id="rabiscos">
+      <div class="section-heading">
+        <h2>Coloque alguma coisa no papel.</h2>
+        <p>Pode rabiscar. Não precisa ter um motivo.</p>
+      </div>
+
+      <div class="drawing-objective" id="drawingObjective" aria-live="polite">
+        <span class="objective-kicker">AGORA VOCÊ PODE</span>
+        <strong id="objectiveTitle">Rabiscar livremente</strong>
+        <p id="objectiveText">Desenhe o que vier à cabeça, sem se preocupar em fazer bonito.</p>
+      </div>
+
+      <div class="drawing-card">
+
+        <div class="drawing-toolbar">
+          <button class="tool" id="pencilBtn" type="button">✎ Lápis</button>
+          <button class="tool" id="eraserBtn" type="button">⌫ Borracha</button>
+          <button class="tool" id="undoBtn" type="button">↶ Desfazer</button>
+          <button class="tool" id="redoBtn" type="button">↷ Refazer</button>
+          <label class="tool" style="display:inline-flex;align-items:center;gap:8px;">
+            Tamanho
+            <input id="sizeRange" type="range" min="1" max="35" value="5" style="width:100px;accent-color:#e0b630;">
+          </label>
+
+          <div class="colors" aria-label="Paleta de cores">
+            <button class="color c1" type="button" data-color="#e8b83f" aria-label="Amarelo"></button>
+            <button class="color c2" type="button" data-color="#e98d6a" aria-label="Coral"></button>
+            <button class="color c3" type="button" data-color="#9aa86f" aria-label="Verde"></button>
+            <button class="color c4" type="button" data-color="#7e9fbc" aria-label="Azul"></button>
+            <button class="color c5" type="button" data-color="#8f7aa8" aria-label="Roxo"></button>
+            <button class="color c6" type="button" data-color="#4d4943" aria-label="Grafite"></button>
+          </div>
+        </div>
+
+        <div class="canvas" id="drawingArea" aria-label="Área de desenho">
+          <canvas id="drawingCanvas"></canvas>
+          <div class="canvas-message" id="canvasMessage">
+            <div>
+              <strong>Seu espaço em branco.</strong>
+              Comece por qualquer lugar.
+            </div>
+          </div>
+        </div>
+
+        <div class="drawing-actions">
+          <button class="btn btn-light" id="clearBtn" type="button">Apagar</button>
+          <button class="btn btn-light" id="continueBtn" type="button">Continuar</button>
+          <button class="btn btn-primary" id="saveBtn" type="button">Salvar desenho</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUTRAS FORMAS -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>O que você precisa agora?</h2>
+        <p>Escolha uma forma de colocar algo para fora.</p>
+      </div>
+
+      <div class="options">
+
+        <button class="option drawing-option" type="button"
+          data-objective-title="Rabisque sem pensar"
+          data-objective-text="Deixe o lápis andar pela tela. Não existe certo, errado ou desenho bonito aqui.">
+          <div class="option-icon">✎</div>
+          <h3>Rabiscos</h3>
+          <p>Uma tela livre para desenhar, rabiscar e experimentar sem preocupação.</p>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="option" type="button" id="colorirOption">
+          <div class="option-icon">◐</div>
+          <h3>Colorir</h3>
+          <p>Escolha uma imagem e preencha com as cores que quiser.</p>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="option" type="button" id="sentimentoOption">
+          <div class="option-icon">♡</div>
+          <h3>Seu sentimento</h3>
+          <p>Responda a perguntas através de desenhos, cores e formas.</p>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="option drawing-option" type="button"
+          data-objective-title="Faça linhas, círculos e padrões"
+          data-objective-text="Repita movimentos simples e tranquilos. Não tente criar nada perfeito; apenas acompanhe o movimento.">
+          <div class="option-icon">○</div>
+          <h3>Apenas relaxe</h3>
+          <p>Faça linhas, círculos, padrões e movimentos repetitivos.</p>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="option drawing-option" type="button"
+          data-objective-title="Transforme uma ideia em desenho"
+          data-objective-text="Faça um pequeno desafio criativo. Você pode desenhar uma preocupação, um lugar seguro ou como gostaria que fosse amanhã.">
+          <div class="option-icon">✦</div>
+          <h3>Desafios rápidos</h3>
+          <p>Pequenas propostas criativas para fazer durante alguns minutos.</p>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="option drawing-option" type="button"
+          data-objective-title="Comece do zero"
+          data-objective-text="Uma folha vazia, alguns minutos e nenhuma obrigação. Faça dela o que quiser.">
+          <div class="option-icon">+</div>
+          <h3>Começar do zero</h3>
+          <p>Uma folha vazia. Uma pausa. Faça dela o que quiser.</p>
+          <span class="arrow">→</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- COLORIR -->
+    <section class="section" id="colorir">
+      <div class="section-heading">
+        <h2>Colorir</h2>
+        <p>Escolha um desenho pronto. Use o lápis ou o balde para preencher.</p>
+      </div>
+
+      <div class="coloring-card">
+        <div class="coloring-toolbar">
+          <div>
+            <span class="objective-kicker">MODO DE COLORIR</span>
+            <strong id="coloringTemplateName">Flor tranquila</strong>
+          </div>
+
+          <div class="coloring-tools">
+            <button class="tool active" id="colorPencilBtn" type="button">✎ Lápis</button>
+            <button class="tool" id="bucketBtn" type="button">🪣 Balde</button>
+            <label class="tool color-size">
+              Tamanho
+              <input id="colorSize" type="range" min="2" max="28" value="7">
+            </label>
+          </div>
+
+          <div class="colors coloring-colors" aria-label="Cores para colorir">
+            <button class="color c1" type="button" data-color="#e8b83f" aria-label="Amarelo"></button>
+            <button class="color c2" type="button" data-color="#e98d6a" aria-label="Coral"></button>
+            <button class="color c3" type="button" data-color="#9aa86f" aria-label="Verde"></button>
+            <button class="color c4" type="button" data-color="#7e9fbc" aria-label="Azul"></button>
+            <button class="color c5" type="button" data-color="#8f7aa8" aria-label="Roxo"></button>
+            <button class="color c6" type="button" data-color="#4d4943" aria-label="Grafite"></button>
+            <button class="color" type="button" data-color="#f5d9a6" aria-label="Pêssego" style="background:#f5d9a6;"></button>
+            <button class="color" type="button" data-color="#d9a7b8" aria-label="Rosa" style="background:#d9a7b8;"></button>
+          </div>
+        </div>
+
+        <div class="template-buttons">
+          <button class="template-btn active" type="button" data-template="flower">🌼 Natureza</button>
+          <button class="template-btn" type="button" data-template="house">⌂ Lugar</button>
+          <button class="template-btn" type="button" data-template="fantasy">✦ Fantasia</button>
+          <button class="template-btn" type="button" data-template="pattern">◌ Padrão</button>
+        </div>
+
+        <div class="color-canvas-wrap">
+          <canvas id="colorCanvas" aria-label="Tela de colorir"></canvas>
+          <div class="coloring-hint" id="coloringHint">
+            <strong>Escolha uma cor.</strong>
+            Com o lápis, pinte livremente. Com o balde, clique dentro de uma área fechada.
+          </div>
+        </div>
+
+        <div class="coloring-actions">
+          <button class="btn btn-light" id="clearColorBtn" type="button">Limpar cores</button>
+          <button class="btn btn-primary" id="saveColorBtn" type="button">Salvar desenho</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEU SENTIMENTO -->
+    <section class="section" id="sentimento">
+      <div class="feeling">
+
+        <div class="feeling-label">SEU SENTIMENTO</div>
+
+        <h2>
+          E se você pudesse desenhar aquilo que não consegue explicar?
+        </h2>
+
+        <p>
+          Não precisa encontrar as palavras certas. Responda desenhando,
+          usando cores, formas ou qualquer coisa que faça sentido para você.
+        </p>
+
+        <div class="question-list">
+          <button class="question feeling-option" type="button" data-objective-title="Se o que você está sentindo fosse uma cor..." data-objective-text="Escolha uma cor e desenhe livremente a partir dela. Não precisa representar nada de forma literal.">Se fosse uma cor...</button>
+          <button class="question feeling-option" type="button" data-objective-title="Se sua cabeça fosse um lugar..." data-objective-text="Desenhe esse lugar do jeito que ele aparece para você. Pode ser real, estranho, vazio, cheio ou inventado.">Se sua cabeça fosse um lugar...</button>
+          <button class="question feeling-option" type="button" data-objective-title="Desenhe aquilo que gostaria de conseguir dizer." data-objective-text="Use linhas, formas e cores para colocar para fora algo que talvez seja difícil transformar em palavras.">Aquilo que gostaria de dizer...</button>
+          <button class="question feeling-option" type="button" data-objective-title="Transforme sua preocupação em alguma coisa." data-objective-text="Imagine que sua preocupação virou um objeto, criatura, paisagem ou símbolo. Desenhe como ela seria.">Transforme sua preocupação...</button>
+          <button class="question feeling-option" type="button" data-objective-title="Desenhe um lugar onde você se sentiria seguro." data-objective-text="Crie um lugar real ou imaginário que transmita segurança, conforto ou tranquilidade para você.">Um lugar onde se sentiria seguro...</button>
+          <button class="question feeling-option" type="button" data-objective-title="Desenhe como você gostaria que fosse amanhã." data-objective-text="Não precisa desenhar um futuro perfeito. Apenas uma pequena coisa que você gostaria de encontrar no amanhã.">Como gostaria que fosse amanhã?</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RELAXAR -->
+    <section class="section" id="relaxar">
+      <div class="section-heading">
+        <h2>Apenas relaxe.</h2>
+        <p>Escolha um exercício. Você será levado até a tela de desenho para começar.</p>
+      </div>
+
+      <div class="relax-grid">
+        <button class="relax-item relax-option" type="button" data-objective-title="Faça linhas" data-objective-text="Faça linhas longas, curtas, retas ou tortas. Apenas acompanhe o movimento da mão.">
+          <div class="relax-symbol">╱ ╲</div><h3>Faça linhas</h3>
+        </button>
+        <button class="relax-item relax-option" type="button" data-objective-title="Complete o padrão" data-objective-text="Crie uma sequência simples e continue repetindo-a pelo espaço. Não precisa ficar perfeito.">
+          <div class="relax-symbol">◇ ◇</div><h3>Complete o padrão</h3>
+        </button>
+        <button class="relax-item relax-option" type="button" data-objective-title="Faça círculos" data-objective-text="Desenhe círculos grandes e pequenos, um dentro do outro ou espalhados pela folha.">
+          <div class="relax-symbol">○ ○</div><h3>Faça círculos</h3>
+        </button>
+        <button class="relax-item relax-option" type="button" data-objective-title="Siga o caminho" data-objective-text="Comece em um ponto e crie um caminho contínuo até outro lugar da tela, sem levantar o lápis.">
+          <div class="relax-symbol">⌁</div><h3>Siga o caminho</h3>
+        </button>
+        <button class="relax-item relax-option" type="button" data-objective-title="Crie uma mandala" data-objective-text="Comece por uma forma no centro e vá criando formas ao redor, repetindo movimentos sempre que quiser.">
+          <div class="relax-symbol">✺</div><h3>Crie uma mandala</h3>
+        </button>
+      </div>
+    </section>
+
+    <!-- DESAFIOS -->
+    <section class="section" id="desafios">
+      <div class="section-heading">
+        <h2>Desafios rápidos.</h2>
+        <p>Escolha uma ideia e transforme-a em desenho. Quando clicar, a tela de desenho será aberta para você começar.</p>
+      </div>
+
+      <div class="challenge-grid">
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Desenhe uma preocupação" data-objective-text="Transforme uma preocupação em formas, linhas ou personagens. Depois, mude o desenho como quiser.">
+          <span>01</span><strong>Desenhe uma preocupação</strong><small>Transforme algo que pesa na cabeça em uma imagem.</small>
+        </button>
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Desenhe um lugar seguro" data-objective-text="Imagine um lugar onde você se sentiria protegido. Pode ser real, inventado ou uma mistura dos dois.">
+          <span>02</span><strong>Desenhe um lugar seguro</strong><small>Crie um espaço real ou imaginário onde você gostaria de estar.</small>
+        </button>
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Use apenas 3 formas" data-objective-text="Faça um desenho usando somente três formas: por exemplo, círculos, quadrados e triângulos.">
+          <span>03</span><strong>Use apenas 3 formas</strong><small>Escolha três formas e descubra o que consegue criar com elas.</small>
+        </button>
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Desenhe sem tirar o lápis" data-objective-text="Comece em qualquer ponto e tente criar uma imagem inteira sem tirar o lápis da tela.">
+          <span>04</span><strong>Não tire o lápis</strong><small>Faça um desenho inteiro com uma única linha contínua.</small>
+        </button>
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Como você gostaria que fosse amanhã?" data-objective-text="Desenhe uma pequena cena que represente como você gostaria que o amanhã pudesse ser.">
+          <span>05</span><strong>Desenhe o amanhã</strong><small>Crie uma cena, um símbolo ou uma paisagem para representar amanhã.</small>
+        </button>
+        <button class="challenge-card challenge-option" type="button" data-objective-title="Transforme uma palavra em desenho" data-objective-text="Escolha uma palavra que combine com o que você precisa agora e transforme essa palavra em uma imagem.">
+          <span>06</span><strong>Uma palavra em desenho</strong><small>Escolha uma palavra e transforme-a em formas, símbolos ou uma cena.</small>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Antes de Desistir</strong><br>
+    Para quando continuar parece difícil demais.
+  </footer>
+
+
+
+<script>
+/* DESENHO LIVRE */
+const area = document.getElementById("drawingArea");
+const canvas = document.getElementById("drawingCanvas");
+const ctx = canvas.getContext("2d");
+
+const pencilBtn = document.getElementById("pencilBtn");
+const eraserBtn = document.getElementById("eraserBtn");
+const undoBtn = document.getElementById("undoBtn");
+const redoBtn = document.getElementById("redoBtn");
+const clearBtn = document.getElementById("clearBtn");
+const saveBtn = document.getElementById("saveBtn");
+const continueBtn = document.getElementById("continueBtn");
+const sizeRange = document.getElementById("sizeRange");
+
+let drawing = false;
+let tool = "pencil";
+let color = "#e8b83f";
+let size = 5;
+let lastX = 0, lastY = 0;
+let history = [];
+let historyPos = -1;
+
+function resizeCanvas() {
+  const old = document.createElement("canvas");
+  old.width = canvas.width;
+  old.height = canvas.height;
+  if (canvas.width) old.getContext("2d").drawImage(canvas, 0, 0);
+
+  canvas.width = area.clientWidth;
+  canvas.height = area.clientHeight;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  if (old.width) ctx.drawImage(old, 0, 0, old.width, old.height, 0, 0, canvas.width, canvas.height);
+}
+
+function saveHistory() {
+  history = history.slice(0, historyPos + 1);
+  history.push(canvas.toDataURL());
+  if (history.length > 30) history.shift();
+  historyPos = history.length - 1;
+}
+
+function loadHistory(data) {
+  const img = new Image();
+  img.onload = function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    area.classList.add("drawing");
+  };
+  img.src = data;
+}
+
+function point(e) {
+  const r = canvas.getBoundingClientRect();
+  return { x:e.clientX-r.left, y:e.clientY-r.top };
+}
+
+function startDraw(e) {
+  e.preventDefault();
+  drawing = true;
+  const p = point(e);
+  lastX = p.x;
+  lastY = p.y;
+
+  ctx.beginPath();
+  ctx.arc(p.x, p.y, size / 2, 0, Math.PI * 2);
+  ctx.fillStyle = tool === "eraser" ? "#fffefa" : color;
+  ctx.fill();
+
+  area.classList.add("drawing");
+  canvas.setPointerCapture(e.pointerId);
+}
+
+function draw(e) {
+  if (!drawing) return;
+  e.preventDefault();
+
+  const p = point(e);
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(p.x, p.y);
+  ctx.strokeStyle = tool === "eraser" ? "#fffefa" : color;
+  ctx.lineWidth = tool === "eraser" ? Math.max(10, size * 2.5) : size;
+  ctx.stroke();
+
+  lastX = p.x;
+  lastY = p.y;
+}
+
+function stopDraw(e) {
+  if (!drawing) return;
+  drawing = false;
+  try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
+  saveHistory();
+}
+
+function setTool(t) {
+  tool = t;
+  pencilBtn.classList.toggle("active", t === "pencil");
+  eraserBtn.classList.toggle("active", t === "eraser");
+  canvas.style.cursor = t === "eraser" ? "cell" : "crosshair";
+}
+
+pencilBtn.onclick = function() { setTool("pencil"); };
+eraserBtn.onclick = function() { setTool("eraser"); };
+
+document.querySelectorAll("#rabiscos .color").forEach(function(btn) {
+  btn.onclick = function() {
+    color = btn.dataset.color;
+    setTool("pencil");
+  };
+});
+
+sizeRange.oninput = function() {
+  size = Number(sizeRange.value);
+};
+
+undoBtn.onclick = function() {
+  if (historyPos > 0) {
+    historyPos--;
+    loadHistory(history[historyPos]);
+  }
+};
+
+redoBtn.onclick = function() {
+  if (historyPos < history.length - 1) {
+    historyPos++;
+    loadHistory(history[historyPos]);
+  }
+};
+
+clearBtn.onclick = function() {
+  if (confirm("Apagar todo o desenho?")) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    area.classList.remove("drawing");
+    saveHistory();
+  }
+};
+
+saveBtn.onclick = function() {
+  const link = document.createElement("a");
+  link.download = "meu-desenho-antes-de-desistir.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+};
+
+continueBtn.onclick = function() {
+  document.getElementById("sentimento").scrollIntoView({behavior:"smooth"});
+};
+
+canvas.onpointerdown = startDraw;
+canvas.onpointermove = draw;
+canvas.onpointerup = stopDraw;
+canvas.onpointercancel = stopDraw;
+
+window.addEventListener("resize", function() {
+  const saved = canvas.toDataURL();
+  resizeCanvas();
+  if (area.classList.contains("drawing")) loadHistory(saved);
+});
+
+resizeCanvas();
+setTool("pencil");
+saveHistory();
+
+
+/* ATALHOS E OBJETIVOS */
+const rabiscos = document.getElementById("rabiscos");
+const sentimento = document.getElementById("sentimento");
+const objectiveTitle = document.getElementById("objectiveTitle");
+const objectiveText = document.getElementById("objectiveText");
+const drawingObjective = document.getElementById("drawingObjective");
+
+function openDrawing(option) {
+  objectiveTitle.textContent = option.dataset.objectiveTitle || "Rabiscar livremente";
+  objectiveText.textContent = option.dataset.objectiveText || "Desenhe o que quiser, sem preocupação.";
+  rabiscos.scrollIntoView({behavior:"smooth"});
+  setTimeout(function() {
+    drawingObjective.animate(
+      [{transform:"scale(1)"},{transform:"scale(1.015)"},{transform:"scale(1)"}],
+      {duration:350}
+    );
+  }, 450);
+}
+
+document.getElementById("sentimentoOption").onclick = function() {
+  sentimento.scrollIntoView({behavior:"smooth"});
+};
+
+document.querySelectorAll(".feeling-option, .relax-option, .challenge-option, .drawing-option")
+.forEach(function(option) {
+  option.onclick = function() { openDrawing(option); };
+});
+
+document.getElementById("colorirOption").onclick = function() {
+  document.getElementById("colorir").scrollIntoView({behavior:"smooth"});
+};
+
+
+/* COLORIR */
+const colorCanvas = document.getElementById("colorCanvas");
+const colorCtx = colorCanvas.getContext("2d", {willReadFrequently:true});
+const colorWrap = colorCanvas.parentElement;
+
+const colorPencilBtn = document.getElementById("colorPencilBtn");
+const bucketBtn = document.getElementById("bucketBtn");
+const colorSize = document.getElementById("colorSize");
+const clearColorBtn = document.getElementById("clearColorBtn");
+const saveColorBtn = document.getElementById("saveColorBtn");
+const templateName = document.getElementById("coloringTemplateName");
+
+let colorMode = "pencil";
+let colorValue = "#e8b83f";
+let brushSize = 7;
+let activeTemplate = "flower";
+let baseImage = "";
+let coloring = false;
+let lastCX = 0, lastCY = 0;
+
+const templates = {
+  flower: {
+    name:"Flor tranquila",
+    draw:function(c,w,h) {
+      c.clearRect(0,0,w,h);
+      c.fillStyle="#fffefa";
+      c.fillRect(0,0,w,h);
+      c.strokeStyle="#4b463f";
+      c.lineWidth=4;
+      c.lineJoin="round";
+      c.lineCap="round";
+
+      const x=w*.5, y=h*.43;
+      for(let i=0;i<8;i++) {
+        const a=i*Math.PI/4;
+        c.beginPath();
+        c.ellipse(x+Math.cos(a)*82,y+Math.sin(a)*82,48,72,a,0,Math.PI*2);
+        c.stroke();
+      }
+      c.beginPath(); c.arc(x,y,43,0,Math.PI*2); c.stroke();
+
+      c.beginPath();
+      c.moveTo(x,y+43);
+      c.bezierCurveTo(x-8,y+130,x+18,y+195,x-2,h*.78);
+      c.stroke();
+
+      c.beginPath();
+      c.moveTo(x-2,h*.67);
+      c.bezierCurveTo(x-90,h*.60,x-105,h*.72,x-145,h*.67);
+      c.stroke();
+
+      c.beginPath();
+      c.moveTo(x+3,h*.61);
+      c.bezierCurveTo(x+80,h*.53,x+115,h*.61,x+145,h*.55);
+      c.stroke();
+    }
+  },
+
+  house: {
+    name:"Um lugar tranquilo",
+    draw:function(c,w,h) {
+      c.clearRect(0,0,w,h);
+      c.fillStyle="#fffefa"; c.fillRect(0,0,w,h);
+      c.strokeStyle="#4b463f"; c.lineWidth=4; c.lineJoin="round";
+
+      const x=w*.25,y=h*.40,ww=w*.50,hh=h*.35;
+      c.strokeRect(x,y,ww,hh);
+
+      c.beginPath();
+      c.moveTo(x-25,y); c.lineTo(x+ww/2,y-115); c.lineTo(x+ww+25,y);
+      c.closePath(); c.stroke();
+
+      c.strokeRect(x+ww*.42,y+hh*.48,ww*.16,hh*.52);
+      c.strokeRect(x+ww*.10,y+hh*.25,ww*.20,hh*.20);
+      c.strokeRect(x+ww*.70,y+hh*.25,ww*.20,hh*.20);
+
+      c.beginPath();
+      c.moveTo(w*.10,h*.82);
+      c.quadraticCurveTo(w*.35,h*.70,w*.50,h*.82);
+      c.quadraticCurveTo(w*.68,h*.70,w*.90,h*.82);
+      c.stroke();
+
+      c.beginPath(); c.arc(w*.80,h*.19,38,0,Math.PI*2); c.stroke();
+    }
+  },
+
+  fantasy: {
+    name:"Mundo de fantasia",
+    draw:function(c,w,h) {
+      c.clearRect(0,0,w,h);
+      c.fillStyle="#fffefa"; c.fillRect(0,0,w,h);
+      c.strokeStyle="#4b463f"; c.lineWidth=4;
+
+      c.beginPath(); c.arc(w*.50,h*.52,120,0,Math.PI*2); c.stroke();
+
+      c.beginPath();
+      c.moveTo(w*.50,h*.12); c.lineTo(w*.54,h*.30); c.lineTo(w*.72,h*.26);
+      c.lineTo(w*.59,h*.39); c.lineTo(w*.68,h*.55); c.lineTo(w*.50,h*.46);
+      c.lineTo(w*.32,h*.55); c.lineTo(w*.41,h*.39); c.lineTo(w*.28,h*.26);
+      c.lineTo(w*.46,h*.30); c.closePath(); c.stroke();
+
+      [[.18,.22],[.82,.22],[.20,.72],[.80,.70]].forEach(function(p) {
+        c.beginPath(); c.arc(w*p[0],h*p[1],30,0,Math.PI*2); c.stroke();
+      });
+    }
+  },
+
+  pattern: {
+    name:"Padrões para preencher",
+    draw:function(c,w,h) {
+      c.clearRect(0,0,w,h);
+      c.fillStyle="#fffefa"; c.fillRect(0,0,w,h);
+      c.strokeStyle="#4b463f"; c.lineWidth=3;
+
+      const s=70;
+      for(let y=25;y<h-25;y+=s) {
+        for(let x=25;x<w-25;x+=s) {
+          const type=((x/s+y/s)|0)%3;
+          c.beginPath();
+
+          if(type===0) {
+            c.arc(x+s/2,y+s/2,24,0,Math.PI*2);
+          } else if(type===1) {
+            c.moveTo(x+s/2,y+12);
+            c.lineTo(x+s-12,y+s/2);
+            c.lineTo(x+s/2,y+s-12);
+            c.lineTo(x+12,y+s/2);
+            c.closePath();
+          } else {
+            c.moveTo(x+15,y+s/2);
+            c.bezierCurveTo(x+35,y+5,x+35,y+s-5,x+55,y+s/2);
+          }
+          c.stroke();
+        }
+      }
+    }
+  }
+};
+
+function resizeColorCanvas() {
+  const old=document.createElement("canvas");
+  old.width=colorCanvas.width;
+  old.height=colorCanvas.height;
+  if(old.width) old.getContext("2d").drawImage(colorCanvas,0,0);
+
+  colorCanvas.width=colorWrap.clientWidth;
+  colorCanvas.height=colorWrap.clientHeight;
+
+  if(baseImage) drawTemplate(activeTemplate);
+  else if(old.width) {
+    colorCtx.drawImage(old,0,0,old.width,old.height,0,0,colorCanvas.width,colorCanvas.height);
+  }
+}
+
+function drawTemplate(name) {
+  templates[name].draw(colorCtx,colorCanvas.width,colorCanvas.height);
+  baseImage=colorCanvas.toDataURL();
+  templateName.textContent=templates[name].name;
+}
+
+function restoreTemplate() {
+  const img=new Image();
+  img.onload=function() {
+    colorCtx.clearRect(0,0,colorCanvas.width,colorCanvas.height);
+    colorCtx.drawImage(img,0,0,colorCanvas.width,colorCanvas.height);
+  };
+  img.src=baseImage;
+}
+
+function setColorMode(mode) {
+  colorMode=mode;
+  colorPencilBtn.classList.toggle("active",mode==="pencil");
+  bucketBtn.classList.toggle("active",mode==="bucket");
+  colorCanvas.style.cursor=mode==="bucket"?"cell":"crosshair";
+}
+
+function colorPoint(e) {
+  const r=colorCanvas.getBoundingClientRect();
+  return {x:e.clientX-r.left,y:e.clientY-r.top};
+}
+
+function fillArea(x,y,fillHex) {
+  const w=colorCanvas.width, h=colorCanvas.height;
+  const image=colorCtx.getImageData(0,0,w,h);
+  const data=image.data;
+  const px=Math.floor(x), py=Math.floor(y);
+  const start=(py*w+px)*4;
+  const target=[data[start],data[start+1],data[start+2],data[start+3]];
+
+  const temp=document.createElement("canvas");
+  temp.width=temp.height=1;
+  const t=temp.getContext("2d");
+  t.fillStyle=fillHex;
+  t.fillRect(0,0,1,1);
+  const fill=t.getImageData(0,0,1,1).data;
+
+  if(target[0]===fill[0] && target[1]===fill[1] && target[2]===fill[2]) return;
+
+  function same(i) {
+    return Math.abs(data[i]-target[0])<15 &&
+           Math.abs(data[i+1]-target[1])<15 &&
+           Math.abs(data[i+2]-target[2])<15 &&
+           Math.abs(data[i+3]-target[3])<15;
+  }
+
+  const stack=[[px,py]];
+  const visited=new Uint8Array(w*h);
+
+  while(stack.length) {
+    const p=stack.pop(), cx=p[0], cy=p[1];
+    if(cx<0||cy<0||cx>=w||cy>=h) continue;
+
+    const pos=cy*w+cx, i=pos*4;
+    if(visited[pos] || !same(i)) continue;
+
+    visited[pos]=1;
+    data[i]=fill[0]; data[i+1]=fill[1]; data[i+2]=fill[2]; data[i+3]=255;
+
+    stack.push([cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]);
+  }
+
+  colorCtx.putImageData(image,0,0);
+}
+
+colorCanvas.onpointerdown=function(e) {
+  e.preventDefault();
+  const p=colorPoint(e);
+
+  if(colorMode==="bucket") {
+    fillArea(p.x,p.y,colorValue);
+    return;
+  }
+
+  coloring=true;
+  lastCX=p.x; lastCY=p.y;
+  colorCanvas.setPointerCapture(e.pointerId);
+
+  colorCtx.beginPath();
+  colorCtx.arc(p.x,p.y,brushSize/2,0,Math.PI*2);
+  colorCtx.fillStyle=colorValue;
+  colorCtx.fill();
+};
+
+colorCanvas.onpointermove=function(e) {
+  if(!coloring) return;
+  e.preventDefault();
+
+  const p=colorPoint(e);
+  colorCtx.beginPath();
+  colorCtx.moveTo(lastCX,lastCY);
+  colorCtx.lineTo(p.x,p.y);
+  colorCtx.strokeStyle=colorValue;
+  colorCtx.lineWidth=brushSize;
+  colorCtx.lineCap="round";
+  colorCtx.lineJoin="round";
+  colorCtx.stroke();
+
+  lastCX=p.x; lastCY=p.y;
+};
+
+function stopColor(e) {
+  coloring=false;
+  try { colorCanvas.releasePointerCapture(e.pointerId); } catch (_) {}
+}
+
+colorCanvas.onpointerup=stopColor;
+colorCanvas.onpointercancel=stopColor;
+
+colorPencilBtn.onclick=function() { setColorMode("pencil"); };
+bucketBtn.onclick=function() { setColorMode("bucket"); };
+
+colorSize.oninput=function() {
+  brushSize=Number(colorSize.value);
+};
+
+document.querySelectorAll(".coloring-colors .color").forEach(function(btn) {
+  btn.onclick=function() {
+    colorValue=btn.dataset.color;
+    setColorMode("pencil");
+  };
+});
+
+document.querySelectorAll(".template-btn").forEach(function(btn) {
+  btn.onclick=function() {
+    document.querySelectorAll(".template-btn").forEach(function(b) {
+      b.classList.remove("active");
+    });
+    btn.classList.add("active");
+    activeTemplate=btn.dataset.template;
+    drawTemplate(activeTemplate);
+  };
+});
+
+clearColorBtn.onclick=function() {
+  if(confirm("Voltar o desenho para os contornos originais?")) restoreTemplate();
+};
+
+saveColorBtn.onclick=function() {
+  const link=document.createElement("a");
+  link.download="meu-desenho-colorido.png";
+  link.href=colorCanvas.toDataURL("image/png");
+  link.click();
+};
+
+window.addEventListener("resize",function() {
+  resizeCanvas();
+  resizeColorCanvas();
+});
+
+resizeColorCanvas();
+drawTemplate(activeTemplate);
+setColorMode("pencil");
+</script>
+
+</body>
+</html>
